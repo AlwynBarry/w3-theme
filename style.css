@@ -1,0 +1,1829 @@
+/*!
+Theme Name: W3 Theme
+Theme URI: 
+Author: Alwyn Barry
+Author URI: 
+Description: w3.css Base Theme
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: wt
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+w3_theme is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+A. Base
+1. Generic
+1.1	- Normalize
+1.2	- Box sizing
+B. Layouts
+3. Components
+3.1	- Navigation
+3.2	- Posts and pages
+3.3	- Comments
+3.4	- Widgets
+3.5	- Media
+3.6	- Captions
+3.7	- Galleries
+4. plugins
+4.1	- Jetpack infinite scroll
+5. Utilities
+5.1	- Accessibility
+5.2	- Alignments
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1. Generic
+--------------------------------------------------------------*/
+
+/* 1.1 Normalize
+--------------------------------------------- */
+
+/* Removed ... done by w3.css */
+
+
+/* 1.2 Box sizing
+--------------------------------------------- */
+
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+
+/* Posts and pages
+--------------------------------------------- */
+.sticky {
+	display: block;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+/* Remove top margin from all first page entries so no gap under the secondary header */
+.site-main .page-content:first-child, .site-main .entry-content:first-child, .site-main .entry-summary:first-child,
+.site-main .post-thumbnail:first-child + .entry-content {
+    margin-top: 0;
+}
+
+
+.page-links, .entry-footer {
+	clear: both;
+}
+
+/* Comments
+--------------------------------------------- */
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/* Widgets
+--------------------------------------------- */
+
+.widget select {
+	max-width: 100%;
+}
+
+/* Media
+--------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/* Captions
+--------------------------------------------- */
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/* Galleries
+--------------------------------------------- */
+.gallery {
+	margin-bottom: 1.5em;
+	display: grid;
+	grid-gap: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
+.gallery-columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+	grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+	grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+	grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+	grid-template-columns: repeat(9, 1fr);
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+
+/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	display: none;
+}
+
+/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/* Alignments
+--------------------------------------------- */
+.alignleft {
+
+	/*rtl:ignore*/
+	float: left;
+
+	/*rtl:ignore*/
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignright {
+
+	/*rtl:ignore*/
+	float: right;
+
+	/*rtl:ignore*/
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.5em;
+}
+
+
+/**
+ *  ADDITIONS to base theme
+ * 
+ *  1.	Colour and Font Styles
+ *  1.1		Colour and size variables
+ *	1.2		Default text colours
+ *  1.3	  	Link colours and animations
+ *  1.4		Gutenberg Block palatte colour classes
+ *  1.5		Gutenberg Block font size classes
+ *  1.6		Heading Font size classes for full screen and mobile
+ *  1.7		Typography
+ * 	1.7.1		Blockquotes
+ * 	1.7.2		Tables
+ * 	1.7.3		Definition Lists
+ *  1.7.4		Unordered Lists
+ * 	1.7.5		HTML Tags
+ *	1.7.6		HTML Tags - Make sure embeds and iframes fit their containers
+ *  2.	Overrides for layout using Gutenberg, GetWid and W3
+ *  2.1		Standard Gutenberg Block screen width classes
+ *  2.2		GetWid and w3.css screen width overrides
+ *  3.	Top Menu classes for full screen and mobile
+ *  3.1		Colour and Animation resets for the top menu for all sizes
+ *  3.2		Colour and Animation for the full screen menu
+ *  3.3		Colour and Animation for the mobile menu
+ *  4.	Button Styling
+ *  4.1		Standard button 'look', colour and animation
+ *  4.2		Additional Button colour classes to provide colour overrides
+ *  5.	Header and Footer Styling
+ *  5.1		TopBar header styling
+ *  5.2		Main header styling
+ * 	5.3		Sticky header on larger screens only
+ * 	5.4		Shrinking header on larger screens only
+ *  5.5		Page content header styling
+ *  5.6		Page content header Breadcrumbs styling
+ *  5.7		Footer Styling
+ *  6.	Archive posts excerpts style
+ *	7.	Comments and Pingbacks styling
+ *  8.	Archive posts navigation
+ *  9.	Comment, Post and Page Navigation
+ * 10.	Scroll to top button
+ * 11.	Default Widget Styles
+ * 11.1		Calendar Widget
+ * 11.2		Social Icons Menu Widget
+ * 12.	Misc helpful styles to add to blocks as css classes
+ */
+
+
+/**
+ * 0.	Reset for .entry-content to let w3 control maximum content width.
+ * 		Done early to avoid the > * selector overriding later style declarations.
+ * ----------------------------------------------------------------------- */
+.entry-content > * {
+	max-width: 100%;		/* We are now relying on our .w3-content to constrain the content */
+	margin-bottom: 32px;	/* Change Getwid 28px bottom margin and Blocks 36px to W3 32px */
+}
+
+
+/**
+ * 1. Colour and Font Styles
+ * ----------------------------------------------------------------------- */
+
+/* 1.1	Colour and size variables
+ * 		To modify the look of the theme, just override these variables
+ * ----------------------------------------------------------------------- */
+:root {
+	--wt-primary-color: #3a76ca;
+	--wt-primary-lighter-color: #76a0da;
+	--wt-primary-lightest-color: #f3f7fc;
+	--wt-primary-darker-color: #275391;
+	--wt-complementary-1-color: #76ca3a;
+	--wt-complementary-1-lighter-color: #a0da76;
+	--wt-complementary-1-darker-color: #539127;
+	--wt-complementary-2-color: #ca3a76;
+	--wt-complementary-2-lighter-color: #da76a0;
+	--wt-complementary-2-darker-color: #912753;
+	--wt-light-grey-color: #eeeeee;
+	--wt-grey-color: #aaaaaa;
+	--wt-dark-grey-color: #333333;
+	--wt-text-color: #333333;
+	--wt-text-mid-color: #acaeaf;
+	--wt-text-lighter-color: #ffffff;
+	--wt-link-color: #3a76ca;
+	--wt-link-hover-color: #6fc6e0;
+	--wt-top-menu-text-color: #ffffff;
+	--wt-button-text-color: #ffffff;
+	--wt-boxes-text-color: #ffffff;
+	--wt-boxes-background-color: #3a76ca;
+	--wt-header-text-color: #ffffff;
+	--wt-header-background-color: #3a76ca;
+	--wt-breadcrumb-text-color: #ffffff;
+	--wt-breadcrumb-link-color: #99ccff;
+	--wt-breadcrumb-hover-color: #99ffff;
+	--wt-footer-text-color: #acaeaf;
+	--wt-footer-background-color: #313539;
+
+	--wt-content-width: 768px;
+	--wt-wide-width: 990px;
+
+	/* Set the base font size for all subsequent REM to work from */
+	font-size: 16px;
+	/* Now add the normal font sizes from the base font size */
+	--wt-huge-size: 3rem;
+	--wt-larger-size: 2.5rem;
+	--wt-large-size: 2rem;
+	--wt-h1-size: 3rem;
+	--wt-h2-size: 2rem;
+	--wt-medium-size: 1.5rem;
+	--wt-h3-size: 1.5rem;
+	--wt-default-size: 1rem;
+	--wt-h4-size: 1rem;
+	--wt-h5-size: 0.9rem;
+	--wt-small-size: 0.8rem;
+	--wt-h6-size: 0.8rem;
+}
+
+
+/* 1.2	Default body and text colours
+ * -------------------------------------------------------------- */
+body {
+	background-color: white;
+}
+
+h1 {color: var(--wt-primary-color);}
+h2,h3,h4,h5,h6 {color: var(--wt-primary-darker-color);}
+
+body, p, cite, pre
+dl dd, dl dt, li {font-size: 1rem; color: var(--wt-text-color);}
+
+
+/* 1.3  Link colours and animations
+ * -------------------------------------------------------------- */
+a {color: var(--wt-link-color);}
+/* a:visited {color: var(--wt-link-color);} */
+a {text-decoration: none; transition: all 200ms ease-in-out;}
+
+a:hover, a:focus, a:active, article a:hover,
+article a:focus, article a:active,
+p.feature-credit a:hover, p.feature-credit a:active {color: var(--wt-link-hover-color);}
+
+
+/* 1.4	Gutenberg Block palatte colour classes
+ * -------------------------------------------------------------- */
+.has-wt-text-color {color: var(--wt-text-color);}
+.has-wt-text-lighter-color {color: var(--wt-text-lighter-color);}
+.has-wt-text-mid-color {color: var(--wt-text-mid-color);}
+.has-wt-link-color {color: var(--wt-link-color);}
+.has-wt-link-hover-color {color: var(--wt-link-hover-color);}
+.has-wt-breadcrumb-link-color {color: var(--wt-breadcrumb-link-color);}
+.has-wt-breadcrumb-link-hover-color {color: var(--wt-breadcrumb-link-hover-color);}
+.has-wt-top-menu-text-color {color: var(--wt-top-menu-text-color);}
+.has-wt-boxes-color {color: var(--wt-boxes-text-color);}
+.has-wt-boxes-background-color {background-color: var(--wt-boxes-background-color);}
+.has-wt-button-text-color {color: var(--wt-button-text-color);}
+.has-wt-footer-text-color {color: var(--wt-footer-text-color);}
+.has-wt-footer-background-color {background-color: var(--wt-footer-background-color);}
+
+.has-wt-primary-color {color: var(--wt-primary-color);}
+.has-wt-primary-background-color {background-color: var(--wt-primary-color);}
+.has-wt-primary-lighter-color {color: var(--wt-primary-lighter-color);}
+.has-wt-primary-lighter-background-color {background-color: var(--wt-primary-lighter-color);}
+.has-wt-primary-lightest-color {color: var(--wt-primary-lightest-color);}
+.has-wt-primary-lightest-background-color {background-color: var(--wt-primary-lightest-color);}
+.has-wt-primary-darker-color {color: var(--wt-primary-darker-color);}
+.has-wt-primary-darker-background-color {background-color: var(--wt-primary-darker-color);}
+.has-wt-complementary-1-color {color: var(--wt-complementary-1-color);}
+.has-wt-complementary-1-background-color {background-color: var(--wt-complementary-1-color);}
+.has-wt-complementary-1-lighter-color {color: var(--wt-complementary-1-lighter-color);}
+.has-wt-complementary-1-lighter-background-color {background-color: var(--wt-complementary-1-lighter-color);}
+.has-wt-complementary-1-darker-color {color: var(--wt-complementary-1-darker-color);}
+.has-wt-complementary-1-darker-background-color {background-color: var(--wt-complementary-1-darker-color);}
+.has-wt-complementary-2-color {color: var(--wt-complementary-2-color);}
+.has-wt-complementary-2-background-color {background-color: var(--wt-complementary-2-color);}
+.has-wt-complementary-2-lighter-color {color: var(--wt-complementary-2-lighter-color);}
+.has-wt-complementary-2-lighter-background-color {background-color: var(--wt-complementary-2-lighter-color);}
+.has-wt-complementary-2-darker-color {color: var(--wt-complementary-2-darker-color);}
+.has-wt-complementary-2-darker-background-color {background-color: var(--wt-complementary-2-darker-color);}
+.has-wt-grey-color {color: var(--wt-grey-color);}
+.has-wt-grey-background-color {background-color: var(--wt-grey-color);}
+.has-wt-light-grey-color {color: var(--wt-light-grey-color);}
+.has-wt-light-grey-background-color {background-color: var(--wt-light-grey-color);}
+.has-wt-dark-grey-color {color: var(--wt-dark-grey-color);}
+.has-wt-dark-grey-background-color {background-color: var(--wt-dark-grey-color);}
+.has-wt-white-color {color: #ffffff;}
+
+
+/* 1.5	Gutenberg Block font size classes
+ * -------------------------------------------------------------- */
+.has-huge-font-size, #primary .has-huge-font-size {font-size: var(--wt-huge-size);}
+.has-larger-font-size, #primary .has-larger-font-size {font-size: var(--wt-larger-size);}
+.has-large-font-size, #primary .has-large-font-size {font-size: var(--wt-large-size); font-weight: 600;}
+.has-medium-font-size, #primary .has-medium-font-size {font-size: var(--wt-medium-size);}
+.has-normal-font-size, #primary .has-normal-font-size,
+.has-regular-font-size, #primary .has-regular-font-size {font-size: var(--wt-default-size);}
+.has-small-font-size, #primary .has-small-font-size {font-size: var(--wt-small-size);}
+
+
+/*
+ * 1.6	Default and Heading Font size classes for full screen and mobile
+ * -------------------------------------------------------------- */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	font-family: Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: var(--wt-default-size);
+	line-height: 1.5;
+}
+
+h1, #primary h1 {font-size: var(--wt-h1-size); font-weight: 600;}
+h2, #primary h2 {font-size: var(--wt-h2-size); font-weight: 600;}
+h3, #primary h3 {font-size: var(--wt-h3-size);}
+h4, #primary h4 {font-size: var(--wt-h4-size); font-weight: bold;}
+h5, #primary h5 {font-size: var(--wt-h5-size); font-weight: bold;}
+h6, #primary h6 {font-size: var(--wt-h6-size); font-weight: bold;}
+
+small {font-size: var(--wt-small-size);}
+big {font-size: var(--wt-large-size);}
+
+@media screen and (max-width: 767px) {
+	.has-huge-font-size, #primary .has-huge-font-size,
+	.has-larger-font-size, #primary .has-larger-font-size,
+	h1, #primary h1 {font-size: var(--wt-h2-size);}
+	h2, #primary h2 {font-size: var(--wt-h3-size);}
+	.has-large-font-size, #primary .has-large-font-size,
+	h3, #primary h3 {font-size: var(--wt-h4-size);}
+	.has-medium-font-size, #primary .has-medium-font-size,
+	h4, #primary h4 {font-size: var(--wt-h4-size);}
+	h5, #primary h5 {font-size: var(--wt-h5-size);}
+	big {font-size: var(--medium-size);}
+}
+
+
+/*
+ * 1.7	Typography
+ * -------------------------------------------------------------- */
+
+/* 1.7.1	Blockquotes */
+
+.entry-content > blockquote,  /* To ensure entry-content padding doesn't override this */
+blockquote, blockquote.wp-block-quote {
+	background-color: var(--wt-primary-lightest-color);
+	border-left: 4px solid var(--wt-primary-color);
+	padding: 32px 32px;
+	overflow: hidden;
+}
+
+.entry-content .wp-block-pullquote > blockquote {
+	background-color: transparent;
+	border-left: 0px;
+}
+
+blockquote *:first-child {
+	margin-top: 0; /* Remove top margin for first paragraph */
+}
+
+blockquote *:last-child {
+	margin-bottom: 0; /* Remove bottom margin for last paragraph */
+}
+
+/* 1.7.2	Tables */
+
+table {
+	border: 1px solid var(--wt-text-color); 
+	border-collapse: collapse;
+}
+
+table th, table td {
+	border: 1px solid var(--wt-text-color);
+	word-break: normal;
+	padding: 0.5rem;
+}
+
+table th {
+	background-color: var(--wt-primary-lightest-color);
+}
+
+
+/* 1.7.3	Definition Lists */
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+
+/* 1.7.4	Unordered Lists */
+/* Turn on the list style turned off by the Wordpress common.css */
+ul {
+	list-style: disc outside;
+}
+
+
+/* 1.7.5	HTML Tags */
+
+b,
+strong {
+  font-weight: 700; }
+
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+.entry-content > pre,
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", courier, monospace;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: consolas, monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
+	hyphens: none;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: var(--wt-light-grey-color);
+	text-decoration: none;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+hr {
+	background-color: var(--wt-grey-color);
+	border: 0;
+	height: 1px;
+}
+
+quote, q {
+  quotes: "\201C" "\201D";
+}
+
+
+/* 1.7.6	Make sure embeds and iframes fit their containers. */
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+
+/* 
+ * 2.	Overrides for layout using Gutenberg, GetWid and W3
+ * -------------------------------------------------------------- */
+
+/* 2.1	Standard Gutenberg Block screen width classes
+ * -------------------------------------------------------------- */
+
+/* Force the alignwide to break the boundaries of all parent containers
+ * We need to use this method because we are using HTML3 semantic blocks
+ * below .entry-content                                                  */
+
+@media screen and (min-width: 992px) {
+	/* Default alignwide used when we have no sidebar */
+	.entry-content > *.alignwide {
+		margin-left: calc(25% - 25vw);
+		margin-right: calc(25% - 25vw);
+		max-width: 100vw;
+		width: auto;
+	}
+	
+	/* Alternative alignwide when side bar is in use */
+	.w3-row .w3-col.l9 .entry-content > *.alignwide {
+		/* 736px is --wt-content-width - 32px w3-container padding */
+		margin-left: calc(( 736px - 68vw ) / 2 );  /* Default for older browsers without min() */
+		margin-left: min( calc(( 736px - 68vw ) / 2 ), 0px ); 
+		margin-right: auto;
+		max-width: max( 68vw, var(--wt-content-width) );
+		width: max( 68vw, var(--wt-content-width) );
+	}
+
+}
+
+/* Reset the original setting which is working to a different system */
+.entry-content > *.alignfull {
+	max-width: none;
+}
+
+/* Get rid of inherited blocks.css top margin (1.5em) in first alignfull of the page */
+.site-main .alignfull:first-child {
+    margin-top: 0;
+}
+
+/* Force the alignfull to break the boundaries of all parent containers				*/
+/* We need to use this method because we are using .w3-content above .entry-content */
+.entry-content > *.alignfull {
+	margin-left: calc(50% - 50vw); /* Bring to full content width for non-sidebar */
+	margin-right: calc(50% - 50vw);
+	max-width: 100vw;
+	width: 100vw;
+	padding-left: 0px;		/* Ensure any surrounding padding is removed too */
+	padding-right: 0px;
+}
+
+@media screen and (max-width: 991px) {
+	.entry-content > *.alignfull {
+		margin-left: calc(50% - 50vw); /* Bring to full content width for non-sidebar */
+		margin-right: auto;
+	}
+}
+
+@media screen and (min-width: 992px) {
+
+	/* Alignfull when we have a sidebar */
+	.w3-row .w3-col.l9 .entry-content > *.alignfull {
+		/* 736 is --wt-content-width - 32px w3-container padding */
+		margin-left: calc( ( 736px - 75vw ) / 2 ); /* Default for older browsers without min() */
+		margin-left: min( calc( ( 736px - 75vw ) / 2 ), 0px ); 
+		margin-right: auto;
+		max-width: 75vw;
+		width: 75vw;
+		padding-left: 0px;		/* Ensure any surrounding padding is removed too */
+		padding-right: 0px;
+	}
+	
+	/* Hide overflow in the main content column */
+	.w3-row .w3-col.l9 {  /* FIX to localise to it's use in Sidebar only */
+		overflow: hidden;
+	}
+}
+
+
+/* 2.2	GetWid and w3.css screen width overrides
+ * -------------------------------------------------------------- */
+
+/* GetWid Social Links Block */
+.wp-block-getwid-social-links__list li {
+	margin: 0 0;		/* blocks.css entry_content li has a large left margin.  Reset to zero for the social links icon list */
+}
+
+/* GetWid overrides */
+.wp-block-getwid-section__inner-wrapper {
+    width: 100%;
+    max-width: 768px;  /* Change from W3 980px to Getwid 768px */
+}
+
+/* W3 overrides */
+.w3-content {
+	width: 100%;
+	max-width: var(--wt-content-width);  /* Change from W3 980px to Getwid 768px */
+}
+
+.w3-container, .w3-panel {
+	padding: 0.001em 16px; /* For some reason the default is 0.01em 16px.  Reduce top/bottom to nearer 0 */
+}
+
+
+/*
+ * 3.	Top Menu classes for full screen and mobile
+ * -------------------------------------------------------------- */
+
+/* 3.1	Colour and Animation resets for the top menu for all sizes
+ * -------------------------------------------------------------- */
+
+/* Top menu link colour for visited links set to normal colour (i.e. visited not presented) */
+nav.w3m a, nav.w3m a:visited {
+	color: var(--wt-text-color);
+}
+
+/* Remove default first child surround colour */
+nav.w3m .w3-dropdown-hover:first-child {
+	background-color: transparent;
+}
+
+nav.w3m .w3-button:hover, nav.w3m .w3-button:active,
+nav.w3m div.w3-dropdown-content a.w3-bar-item:hover {
+	color: var(--wt-top-menu-text-color) !important;
+	background-color: var(--wt-primary-color) !important;
+}
+
+/* Submenu and hover colour and animation */
+nav.w3m a {
+	transition: initial;  /* Remove normal link animation */
+}
+
+
+/* 3.2	Colour and Animation for the full-screen menu
+ * -------------------------------------------------------------- */
+@media screen and (min-width: 992px) {
+	/* Animate menu fade in for the horizontal menu only */
+	@keyframes fadeIn {   
+		0% {opacity: 0;}
+		100% {opacity: 1;}
+	}
+	nav.w3m .w3-dropdown-hover:hover > .w3-dropdown-content {
+		animation: fadeIn ease-in 0.15s;
+	}
+	
+	/* Raise all submenus because some block content is z-index > 1 */
+	nav.w3m > .w3-bar .w3-dropdown-hover .w3-dropdown-content {
+		z-index: 10;
+	}
+
+	/* Border on top of first level drop downs on horizontal menu */
+	nav.w3m > .w3-bar .w3-dropdown-hover .w3-dropdown-content {
+		border-top: 2px solid var(--wt-primary-color);
+	}
+}
+
+
+/* 3.3	Colour and Animation for the mobile menu
+ * -------------------------------------------------------------- */
+@media screen and (max-width: 991px) {
+
+	/* Ensure the open button is top right */
+	header.site-header button.w3m-open-button {
+		position: relative;
+		left: -15px;
+	}
+
+	/* Style the sidebar colours to fit the theme */
+	nav.w3m > .w3-bar {
+		background-color: var(--wt-primary-color) !important;
+		color: white;
+	}
+	
+	/* Change menu item text colour because of now dark background */
+	nav.w3m span,
+	nav.w3m a, nav.w3m a:visited,
+	nav.w3m > .w3-bar .w3m-caret, nav.w3m > .w3-bar .w3m-clickable-caret {
+		color: white;
+	}
+	
+	/* Change the submenu background colour so sidebar color seen */
+	nav.w3m .w3-dropdown-content {
+		background-color: transparent;
+	}
+
+	/* Change the hover background colour to the darker primary colour */
+	nav.w3m .w3-button:hover, nav.w3m .w3-button:active,
+	nav.w3m div.w3-dropdown-content a.w3-bar-item:hover, nav.w3m div.w3-dropdown-content a.w3-bar-item:active,
+	nav.w3m i.w3m-clickable-caret:hover, nav.w3m i.w3m-clickable-caret:active {
+		background-color: var(--wt-primary-darker-color) !important;
+	}
+	
+	/* Change the submenu border colour to the darker primary colour */
+	nav.w3m > .w3-bar .w3-dropdown-content {
+		border-left: 2px solid var(--wt-primary-darker-color);
+	}
+}
+
+
+/**
+ * 4. Button and forms Styling
+ * ------------------------------------------------------------ */
+ 
+/* 4.1	Standard button 'look', colour and animation
+ * ------------------------------------------------------------ */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.wp-block-button__link,
+button.wp-block-button__link,
+a.more-link,
+.pagination .page-numbers:hover, .pagination .current { 
+  background-color: var(--wt-primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Need to override the w3.css !important addition to the .w3-button hover ... sadly!! */
+.w3-button:hover {
+	color: white !important;
+	background-color: var(--wt-primary-darker-color) !important;
+}
+
+/* Need to pad out the input buttons from default size to match other buttons */
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	padding: 0.5rem 1.0rem;
+}
+
+button:hover, button:active,
+input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,
+input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus,
+input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active,
+.wp-block-button__link:hover, .wp-block-button__link:focus, .wp-block-button__link:active,
+a.more-link:hover, a.more-link:focus, a.more-link:active {
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+  background-color: var(--wt-primary-darker-color);
+  transition: all 200ms ease-in-out;
+}
+
+
+/* 4.2 Additional Button colour classes to provide colour overrides 
+ * ----------------------------------------------------------------------- */
+a.wt-primary-button, button.wt-primary-button {background-color: var(--wt-primary-color); color: var(--wt-top-menu-color);}
+a.wt-primary-button:hover, button.wt-primary-button:hover {background-color: var(--wt-primary-darker-color); color: var(--wt-button-text-color) !important;}
+a.wt-primary-button-darker, button.wt-primary-button-darker {background-color: var(--wt-primary-darker-color); color: var(--wt-button-text-color);}
+a.wt-primary-button-darker:hover, button.wt-primary-button-darker:hover {background-color: var(--wt-primary-lighter-color); color: var(--wt-button-text-color) !important;}
+a.wt-complementary-1-button, button.wt-complementary-1-button {background-color: var(--wt-complementary-1-color); color: var(--wt-button-text-color);}
+a.wt-complementary-1-button:hover, button.wt-complementary-1-button:hover {background-color: var(--wt-complementary-1-darker-color) !important; color: var(--wt-button-text-color) !important;}
+a.wt-complementary-2-button, button.wt-complementary-2-button {background-color: var(--wt-complementary-2-color); color: var(--wt-button-text-color);}
+a.wt-complementary-2-button:hover, button.wt-complementary-2-button:hover {background-color: var(--wt-complementary-2-darker-color); color: var(--wt-button-text-color) !important;}
+
+
+/* 4.3 Forms elements styling
+ * ----------------------------------------------------------------------- */
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: var(--wt-text-color);
+	border: 1px solid var(--wt-grey-color);
+	border-radius: 5px;
+	padding: 0.5rem 1.0rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: var(--wt-text-color);
+}
+
+select {
+	border: 1px solid var(--wt-grey-color);
+}
+
+textarea {
+	width: 100%;
+}
+
+/**
+ * 5. Header and Footer Styling
+ * ----------------------------------------------------------------------- */
+
+/* 5.1 Top Bar styling
+ * ----------------------------------------------------------------------- */
+
+@media screen and (max-width: 991px) {
+	header.wt-site-top-bar {
+		display: none;
+	}
+}
+
+header.wt-site-top-bar {
+	background-color: var(--wt-footer-background-color);
+	color: var(--wt-footer-text-color);
+    padding: 8px 24px;
+}
+
+header.wt-site-top-bar > .w3-bar-item {
+	padding: 0 0;
+}
+
+header.wt-site-top-bar > .w3-bar-item .w3-bar-item {
+	padding: 2px 16px;
+}
+
+header.wt-site-top-bar a {
+	color: var(--wt-footer-text-color);
+}
+
+header.wt-site-top-bar a:hover {
+	color: white;
+}
+
+header.wt-site-top-bar,
+header.wt-site-top-bar p,
+header.wt-site-top-bar li {
+	color: var(--wt-footer-text-color);
+	font-size: 0.85rem;
+}
+
+header.wt-site-top-bar p,
+header.wt-site-top-bar ul {
+	margin: 0px 0px;
+}
+header.wt-site-top-bar ul {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+
+/* 5.2 Main header styling
+ * --------------------------------------------------------------- */
+
+/* Main site logo height max amount */
+header.site-header img.custom-logo {
+	height: 80px; width: auto;
+	transition: 1s;
+}
+
+/* On mobile nav put the icon central -- NOT WORKING!! */
+@media screen and (max-width: 991px) {
+	header.site-header div.site-branding {
+		/*
+		float: none;
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+		*/
+	}
+}
+
+/* Non-mobile nav padding */
+@media screen and (min-width: 992px) {
+	header.site-header nav.w3-bar-item {
+		padding-top: 20px;
+		transition: padding 1s;
+	}
+}
+
+
+/* 5.3 Shrinking header on larger screens only
+ * ----------------------------------------------------- */
+@media screen and (min-width: 768px) {
+
+	/* Make the site header background partially transparent when shrunk */
+	header.site-header {
+		transition: 1s;  /* Opacity change done gradually */
+	}
+	header.site-header {
+		background-color: white;
+	}
+	header.site-header.shrink {
+		background-color: rgba(255,255,255,0.85);
+	}
+
+
+	/* The site icon sets the height of the main header, and so reducing this shrinks the header height */
+	header.site-header.shrink img.custom-logo {
+		height: 50px; width: auto;
+		transition: 1s;
+	}
+
+}
+@media screen and (min-width: 991px) {
+	/* And to keep the nav centred we need to halve the padding on the non-mobile nav */
+	header.site-header.shrink nav {
+		padding-top: 10px;
+		transition: padding 1s;
+	}
+}
+
+
+/* 5.4 Sticky header on larger screens only
+ * --------------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+
+	header.site-header.sticky {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 5;
+	}
+
+	/* Use to pad content below a sticky header.  Set to same height as the header */
+	header.site-header.sticky + .below-sticky {
+		margin: 90px 0 0;
+	}
+
+}
+
+
+/* 5.5 Non front page header styling
+ * -------------------------------------------------------- */
+/* The main page banner header styling */
+.page-header {
+	background-color: var(--wt-header-background-color);
+	color: var(--wt-header-text-color);
+	padding: 8px 32px;
+}
+.page-header .page-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-header h1 {
+	color: var(--wt-header-text-color);  /* The background is the primary color, so stand out */
+	font-size: var(--wt-h2-size);		 /* We don't need the largest size to stand out now */
+}
+
+
+/* 5.6	Non front page header Breadcrumbs styling
+ * --------------------------------------------------------- */
+nav.breadcrumbs {display: inline-block; font-size: 0.9rem;}
+nav.breadcrumbs {color: var(--wt-breadcrumb-text-color);}
+nav.breadcrumbs a {color: var(--wt-breadcrumb-link-color);}
+nav.breadcrumbs a:hover {color: var(--wt-breadcrumb-hover-color);}
+
+
+/* 5.7	SideBar Styling
+ * --------------------------------------------------------- */
+.wt-sidebar-surround {
+	height: 100%;
+	border-left: 1px solid var(--wt-light-grey-color);
+}
+
+.wt-sidebar-widget {
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+}
+
+.wt-sidebar-widget p,
+.wt-sidebar-widget span,
+.wt-sidebar-widget a,
+.wt-sidebar-widget li,
+.wt-sidebar-widget pre,
+.wt-sidebar-widget dl dd,
+.wt-sidebar-widget dl dt {
+	font-size: 0.9rem;
+}
+
+.wt-sidebar-widget h2.wt-sidebar-widget-title {
+	font-size: var(--wt-medium-size);
+	text-transform: uppercase;
+}
+
+ 
+/* 5.8	Footer Styling
+ * --------------------------------------------------------- */
+.site-footer .wt-top-footer {
+    background-color: var(--wt-light-grey-color);
+	padding: 1.5rem 1.5rem;
+}
+
+.site-footer .wt-top-footer small {
+	line-height: 1;
+}
+
+/* Bottom footer styling */
+.site-footer .wt-bottom-footer {
+	background-color: var(--wt-footer-background-color);
+	color: var(--wt-footer-text-color);
+    padding: 0.8rem 1.5rem;
+}
+
+.site-footer .wt-bottom-footer a {
+	color: var(--wt-footer-text-color);
+}
+
+.site-footer .wt-bottom-footer a:hover {
+	color: white;
+}
+.site-footer .wt-bottom-footer p {
+	color: var(--wt-footer-text-color);
+	font-size: 0.85rem;
+	line-height: 1rem;
+}
+
+
+/**
+ * 6.	Archive posts excerpts style
+ * ------------------------------------------------------------ */
+
+/* Style the description block */
+.archive-description {
+	background-color: var(--wt-light-grey-color);
+	padding: 16px 16px;
+	border: solid 1px var(--wt-dark-grey-color);
+	border-radius: 5px;
+}
+
+/* Style the description text */
+.archive-description p:before {
+	font-family: "FontAwesome";
+	font-size: var(--wt-huge-size);
+	vertical-align: middle;
+	content: "\f05a";
+	padding-right: 1.5rem;
+}
+
+/* The header for each article in Archive pages */
+article .entry-header {
+	background-color: transparent;
+	color: var(--wt-text-color);
+	padding: 16px 0px;
+}
+
+.site-main .archive-entry .entry-meta,
+.site-main .archive-entry .entry-content,
+.site-main .archive-entry .entry-footer,
+.site-main .archive-entry .entry-read-more {
+	margin-bottom: 16px;
+}
+
+.site-main .archive-entry .entry-content,
+.site-main .archive-entry .entry-content > p {
+	margin-top: 0px;
+}
+
+.entry-meta,
+.entry-footer {
+	font-size: var(--wt-small-size);
+}
+
+.entry-footer .tags-links {
+	margin-left: 2rem;
+}
+
+.entry-footer .tags-links a {
+	background-color: white; /* var(--wt-complementary-1-color); */
+	color: var(--wt-complementary-1-darker-color); /* #fff; */
+	display: inline-block;
+	padding: 2px 8px;
+	text-align: center;
+	border: 1px solid var(--wt-complementary-1-darker-color);
+	border-radius: 3px;
+}
+
+.entry-footer .tags-links a:hover {
+	background-color: var(--wt-complementary-1-darker-color);
+	color: white;
+}
+
+.entry-footer .edit-link {
+	margin-left: 2rem;
+}
+
+.entry-footer span.edit-link a:after {
+	font-family: "FontAwesome";
+	font-size: var(--wt-medium-size);
+	vertical-align: middle;
+	content: "\f044";
+	padding-left: 0.3rem;
+}
+
+
+/**
+ * 7.	Comments and Pingbacks styling
+ * ----------------------------------------------------------------------- */
+
+/* Provide spacing before and after each comment */
+#comments .comment {
+	margin-top: 16px;
+	margin-bottom: 32px;
+}
+
+/* Ensure nested comments are displayed nested by 32px each */
+#comments .comment .comment {
+	margin-left: 32px;
+}
+
+/* Align the date and time after the comment author */
+h4.comment-author {
+	display: inline-block;
+	margin: 0 0;
+}
+
+/* Display the date and time in grey */
+.comment-meta {
+	color: var(--wt-grey-color);
+}
+
+span.edit-comment {
+	margin-left: 2rem;
+	font-size: var(--wt-small-size);
+}
+
+span.edit-comment a::after {
+    font-family: "FontAwesome";
+    /*font-size: var(--wt-medium-size);*/
+    vertical-align: middle;
+    content: "\f044";
+    padding-left: 0.3rem;
+}
+
+.reply a,
+.reply a:visited {
+	font-size: var(--wt-small-size);
+	font-weight: normal;
+}
+
+.reply a:before {
+	content:"\f112";
+	font-family: "FontAwesome";
+	padding: 4px 4px 0 0px;
+	font-size: var(--wt-small-size);
+}
+
+
+/*
+.nocomments {
+	text-align: center;
+}
+
+#comments .navigation {
+	display: block;
+	margin: 8px 0 0 0;
+}
+
+.thread-alt, .thread-even{}
+.even, .alt, .depth-1{}
+
+.comment-list > li .fn, 
+.comment-list > li .cfn {
+	text-transform: uppercase;
+	font-size: var(--wt-default-size);
+	display: inline-block;
+	margin: 16px 0 0;
+}
+
+.commentpolicy {
+	margin: 32px 0 !important;
+	font-size: var(--wt-default-size);
+}
+
+
+h3#reply-title {
+	font-size: var(--wt-medium-size);
+	text-transform: uppercase;
+	padding: 0px;
+	margin: 0px;
+	font-weight: 700;align-items: center;
+}
+
+#cancel-comment-reply-link {
+	font-size: var(--wt-small-size);
+	margin-left: 2rem;
+}
+
+.form-submit {
+	text-align:left;
+}
+
+.comment-form-author label,
+.comment-form-email label,
+.comment-form-url label {
+	font-size:18px;
+	text-transform: uppercase;
+}
+
+.comment-form-subscriptions {
+	margin: 0;
+}
+*/
+
+/**
+ * 8.	Archive posts navigation
+ * ----------------------------------------------------------------------- */
+ 
+.archive-navigation .nav-links {
+	display: flex;
+	justify-content: space-between;
+}
+
+.archive-navigation .nav-previous a:before,
+.archive-navigation .nav-next a:after {
+	font-family: "FontAwesome";
+}
+
+.archive-navigation .nav-previous a:before {
+	content: "\f104";
+	padding-right: 0.5rem;
+}
+
+.archive-navigation .nav-next a:after {
+	content: "\f105";
+	padding-left: 0.5rem;
+}
+
+.archive-navigation .nav-previous a,
+.archive-navigation .nav-next a {
+    background: var(--wt-light-grey-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    display: inline-block;
+    line-height: normal;
+    margin-right: 0.5rem;
+    outline-style: none;
+    padding: 0.7rem 1rem;
+    transition: .3s;
+}
+
+.archive-navigation .nav-previous a:hover,
+.archive-navigation .nav-next a:hover {
+	background-color: var(--wt-primary-color);
+	color: var(--wt-button-text-color);
+}
+
+
+
+/**
+ * 9.	Comment, Post and Page Navigation
+ * ----------------------------------------------------------------------- */
+
+.site-main .comment-navigation,
+.site-main .post-navigation {
+	border-color: var(--wt-light-grey-color);
+	border-top-style: solid;
+	border-top-width: 1px;
+	padding-top: 1.5rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5em;
+	overflow: hidden;
+ }
+
+.site-main .comment-navigation:nth-of-type(2) {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	float: left;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1.5rem;
+	width: 100%;
+ }
+
+.comment-navigation .nav-links,
+.paging-navigation .nav-links,
+.post-navigation .nav-links {
+	text-align: center;
+}
+
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	position: relative;
+}
+
+@media (max-width: 768px) {
+	.resp .comment-navigation .nav-previous, .resp .paging-navigation .nav-previous, .resp .post-navigation .nav-previous {
+		float: none;
+		margin-bottom: 1.5rem;
+		width: 100%;
+	}
+}
+
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	position: relative;
+}
+
+@media (max-width: 768px) {
+    .resp .comment-navigation .nav-next, .resp .paging-navigation .nav-next, .resp .post-navigation .nav-next {
+		float: none;
+		width: 100%;
+	}
+}
+
+.comment-navigation .nav-previous a:before,
+.comment-navigation .nav-next a:after,
+.post-navigation .nav-previous a:before,
+.post-navigation .nav-next a:after {
+	font-family: "FontAwesome";
+	font-size: var(--wt-small-size);
+	position: relative;
+	top: -1px;
+}
+
+.comment-navigation .nav-previous a:before,
+.post-navigation .nav-previous a:before {
+	content: "\f104";
+	padding-right: 0.5rem;
+}
+
+.comment-navigation .nav-next a:after,
+.post-navigation .nav-next a:after {
+	content: "\f105";
+	padding-left: 0.5rem;
+}
+
+.pagination {
+	margin-top: 2rem;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+	text-align: center;
+}
+
+.pagination .page-numbers {
+    background: var(--wt-light-grey-color);
+    border-radius: 5px;
+    color: var(--wt-text-color);
+    display: inline-block;
+    line-height: normal;
+    margin-right: 0.5rem;
+    outline-style: none;
+    padding: 0.7rem 1rem;
+    transition: .3s;
+}
+
+@media (max-width: 480px) {
+	.resp .pagination .page-numbers {
+		display: none;
+	}
+}
+
+.pagination .page-numbers:hover {
+	background-color: var(--wt-primary-color);
+	color: var(--wt-button-text-color);
+}
+
+.pagination .page-numbers.dots {
+	background: none;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.pagination .page-numbers.dots:hover {
+	background: none;
+	color: var(--wt-text-color);
+}
+
+.pagination .current {
+	background-color: var(--wt-primary-darker-color);
+    color: var(--wt-button-text-color);
+ }
+ 
+ .pagination .prev,
+ .pagination .next {
+	display: block;
+	float: left;
+	margin-right: 0;
+}
+@media (max-width: 480px) {
+	.resp .pagination .prev, .resp .pagination .next {
+		display: block;
+	}
+}
+.pagination .next {
+	float: right;
+}
+
+.meta-nav {
+	font-size: var(--wt-small-size);
+ }
+
+.nav-previous .meta-nav {
+	margin-right: 0.2rem;
+}
+
+.nav-next .meta-nav {
+	margin-left: 0.2rem;
+}
+
+
+/**
+ * 10.	Scroll to top
+ * ----------------------------------------------------------------------- */
+
+html {
+	scroll-behavior: smooth;
+}
+
+#scroll-to-top {
+	background: rgba(0, 0, 0, 0.2);
+	display: none; /* Hidden by default */
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99; /* Make sure it is above all other content */
+}
+
+#scroll-to-top .up-arrow {
+	display: block;
+	color: white;
+	line-height: normal;
+}
+
+#scroll-to-top .up-arrow:before {
+	content: "\f106";
+	font-family: "FontAwesome";
+	font-size: 1.5rem;
+}
+
+
+/*
+ * 11. Default Widget Styles
+ * ----------------------------------------------------------------------- */
+ 
+ /* 11.1  Calendar Widget
+  * ----------------------------------------------------------------- */
+  
+#wp-calendar {
+	border: none;
+	margin: 0;
+	font-size: var(--wt-small-size);
+}
+
+#wp-calendar caption {
+	font-weight: 600;
+	text-align: right;
+	padding-bottom: 0.5rem;
+}
+
+#wp-calendar th,
+#wp-calendar td {
+	border: none;
+}
+
+#wp-calendar thead th {
+	text-align: center;
+	padding-bottom: 0.5rem;
+}
+
+#wp-calendar tbody .pad {
+	background: 0 0;
+}
+
+#wp-calendar tbody td {
+	background: var(--wt-light-grey-color);
+	border: 1px solid #fff;
+	text-align: center;
+}
+#wp-calendar tbody td:hover {
+	background:#fff;
+}
+
+#wp-calendar tbody td a {
+	border-bottom: none !important;
+	display: block;
+}
+#wp-calendar tbody td a:hover {
+	border-bottom:none !important;
+}
+
+#wp-calendar tfoot #prev,
+#wp-calendar tfoot #next {
+	padding-top: 0.5rem;
+}
+
+#wp-calendar tfoot #next {
+	text-align: right;
+}
+
+
+/*
+ * 11.2  Social Icons Menu Widget
+ * ----------------------------------------------------------------------- */
+ 
+.widget_nav_menu ul.menu li {
+	display: inline-block;
+}
+
+.widget_nav_menu .menu > li.wt-menu-icon-only a {
+	border-bottom: none;
+	font-size: 0pt;
+	text-align: center;
+}
+
+.widget_nav_menu .menu > li a:before {
+	font-family: "FontAwesome";
+	font-size: 1.1rem;
+	color: var(--wt-footer-text-color);
+	margin-left: 1rem;
+	content: "";
+}
+
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="behance.net"]:before { content: "\f1b4"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="codepen.io"]:before { content: "\f1cb"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="delicious.com"]:before { content: "\f1a5"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="deviantart.com"]:before { content: "\f1bd"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="digg.com"]:before { content: "\f1a6"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="dribbble.com"]:before { content: "\f17d"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="facebook.com"]:before { content: "\f230"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="/feed/"]:before { content: "\f09e"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="flickr.com"]:before { content: "\f16e"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="foursquare.com"]:before { content: "\f180"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="github.com"]:before { content: "\f09b"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="instagram.com"]:before { content: "\f16d"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="linkedin.com"]:before { content: "\f0e1"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="pinterest.com"]:before { content: "\f0d2"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="reddit.com"]:before { content: "\f1a1"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="snapchat.com"]:before { content: "\f2ac"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="soundcloud.com"]:before { content: "\f1be"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="stackexchange.com"]:before { content: "\f18d"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="stackoverflow.com"]:before { content: "\f16c"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="tumblr.com"]:before { content: "\f173"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="twitter.com"]:before { content: "\f099"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="vimeo.com"]:before { content: "\f194"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="vine.co"]:before { content: "\f1ca"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="vk.com"]:before { content: "\f189"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="weibo.com"]:before { content: "\f18a"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="wordpress.com"]:before { content: "\f19a"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="xing.com"]:before { content: "\f168"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="yelp.com"]:before { content: "\f1e9"; }
+.widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="youtube.com"]:before { content: "\f16a"; }
+
+
+/*
+ * 12. Misc helpful styles to add to blocks as css classes
+ * ----------------------------------------------------------------------- */
+
+/* Useful styles to remove column or section spacing */
+.wt-margin-top-0 {
+	margin-top: 0;
+}
+
+.wt-margin-right-0 {
+	margin-right: 0;
+}
+
+.wt-margin-bottom-0 {
+	margin-bottom: 0;
+}
+
+.wt-margin-left-0 {
+	margin-left: 0;
+}
+
+.wt-margin-left-right-0 {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wt-margin-top-bottom-0 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.wt-margins-0 {
+	margin: 0 0 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;	
+}
+
+/* Common action icon additions */
+span.email a::before {
+	content: "\f0e0";
+	font-family: "FontAwesome";
+	padding-right: 0.5rem;
+}
+
+span.phone a::before {
+	content: "\f095";
+	font-family: "FontAwesome";
+	padding-right: 0.5rem;
+}
+
+/* Adding shadow to title text when displaying over images */
+.wt-colophon-text {
+	color: #ffffff;
+}
+
+.wt-colophon-text,
+.wt-shadow-text {
+    text-shadow: 2px 2px 8px #000000;
+}
+
+/* Classes to create columns of text from single column paragraphs */
+.wt-two-column-text {
+    -webkit-columns: 2 300px;
+    -moz-columns: 2 300px;
+    columns: 2 300px;
+    column-gap: 3em;
+    column-rule: 2px solid #eeeeee;
+}
+
+.wt-three-column-text {
+    -webkit-columns: 3 300px;
+    -moz-columns: 3 300px;
+    columns: 3 300px;
+    column-gap: 3em;
+    column-rule: 2px solid #eeeeee;
+}
+
+.wt-four-column-text {
+    -webkit-columns: 4 225px;
+    -moz-columns: 2 225px;
+    columns: 3 225px;
+    column-gap: 3em;
+    column-rule: 2px solid #eeeeee;
+}
+
+/* Class to hide content on mobile devices */
+@media screen and (max-width: 767px) {
+	.wt-hide-mobile {display: none;}
+}

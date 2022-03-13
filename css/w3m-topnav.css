@@ -1,0 +1,203 @@
+/**
+ * Name: w3m-topnav
+ * Descripton: Styles to create a w3.css based horizontal menu that re-orients to a sidebar vertical menu on mobiles.
+ * @author: Alwyn Barry
+ *
+ * Guide: To work correctly the menu should be structured as follows:
+ * 
+ *	<header class="w3m w3-bar">
+ * 		<!-- Other header items can be added as needed -->
+ * 		<button class="w3-bar-item w3-button w3m-control w3m-open-button" onclick="openSideMenu()">OPEN</button>
+ *		<nav class="w3-bar-item w3m">
+ *			<div class="w3-bar w3-padding-24">
+ *				<button class="w3-bar-item w3-button w3m-control w3m-close-button" onclick="closeSideMenu()">Close</button>
+ * 				<div class="w3-dropdown-hover">
+ *					<!-- The dropdown button part -->
+ *					<div class="w3m-caret-container">
+ *						<!-- The button text, which contains the caret used in the horizontal pull-right menu --> 
+ *						<a class="w3-button">Dropdown Name <i class="w3m-caret fa fa-angle-right"></i></a>
+ *						<!-- The caret used in the horizontal mobile menu - to be clickable it has to be separate from the button -->
+ *						<button onclick="caretClick(this)" class="w3m-clickable-caret fa fa-angle-right"></button>
+ *					</div>
+ *					<!-- The dropdown content part -->
+ *					<div class="w3-dropdown-content w3-bar-block w3-card-4">
+ *						<a class="w3-bar-item w3-button">link 1</a>
+ *						<a class="w3-bar-item w3-button">link 2</a>
+ * 						<!-- ... additional links, including additional dropdowns ... -->
+ *					</div> <!-- w3-dropdown-content -->
+ *				</div> <!-- w3-dropdown-hover -->
+ *				<!-- ... additional links, including additional dropdowns ... -->
+ * 			</div> <!-- w3-bar -->
+ * 		</nav> <!-- w3m -->
+ * 		<!-- Other header items can be added as needed -->
+ * 	</header> <!-- w3-bar -->
+*/
+
+
+/* Style any non-link to have same padding etc as w3-button */
+nav.w3m span {
+	display: inline-block;
+	padding: 8px 16px;
+	vertical-align: middle;
+	overflow: hidden;
+	text-align: center;
+}
+
+/* Provide Horizontal menu styles with hovered dropdowns and second level pull-right menus for large screens */
+@media screen and (min-width: 992px) {
+
+	/**
+	 *  Style resets to remove mobile styles and enable horizontal menu features
+	**/
+
+	/* Hide the open and close side menu control buttons */
+	header.w3-bar .w3m-control,
+	nav.w3m .w3m-control {display: none;}
+
+	/* Ensure the menu is displayed in case the side menu was toggled to not display when the screen is resized */
+	header.w3-bar nav.w3m {position: static; left: 0px;} /* Note - using position to hide/reveal the menu bar so screen readers can always see it */
+	header.w3-bar, nav.w3m, nav.w3m > .w3-bar {overflow: visible;} /* Ensure that dropdown menus are seen */
+	nav.w3m > .w3-bar {position: relative;} /* Restore dropdown positioning relative to the actual nav bar placement in the header */
+
+
+	/**
+	 *  Style changes to base w3 styles to deal with bugs and dropdown submenu positioning
+	**/
+
+	/* Turn off inline-block and float left for .w3-dropdown-hover within dropdown menus, or else width will accumulate */
+	nav.w3m > .w3-bar .w3-dropdown-content .w3-dropdown-hover {display: block; float: none;}
+	/* Give submenus a fixed width or they will inherit the width of the parent */
+	nav.w3m > .w3-bar .w3-dropdown-content,
+	nav.w3m > .w3-bar .w3-dropdown-content .w3-dropdown-content {width: 240px;}
+
+
+	/**
+	 *  Change the w3-hover functionality to use position instead
+	**/
+	nav.w3m > .w3-bar .w3-dropdown-hover .w3-dropdown-content {display: block; position: fixed; left: -9999px; overflow: hidden;} /* Use 'position' to move off-screen rather than 'display:none' so screen readers can still see it */
+	
+
+	/**
+	 *  Second level menu hover using position
+	**/
+	nav.w3m > .w3-bar > .w3-dropdown-hover {position: relative;}
+	nav.w3m > .w3-bar > .w3-dropdown-hover:hover > .w3-dropdown-content {position: absolute; left: 0; right: unset; overflow: visible;}
+
+
+	/**
+	 *  Third level pull-right menu hover using position
+	**/
+	nav.w3m > .w3-bar .w3-dropdown-content .w3-dropdown-hover {position: relative;}
+	/* Position the level 3 pull-right menu to the right of the parent */
+	nav.w3m > .w3-bar .w3-dropdown-content .w3-dropdown-hover:hover .w3-dropdown-content {position: absolute; top: 0; left: 100%; overflow: visible;}
+
+	
+	/**
+	 *  Styles for pull-left menus
+	**/
+
+	/* If the whole menu is pulled right, automatically position the last second level dropdown and it's children to the left */
+	nav.w3m.w3-right > .w3-bar > .w3-dropdown-hover:last-of-type:hover > .w3-dropdown-content {position:absolute; left: unset; right: 0;}
+	nav.w3m.w3-right > .w3-bar > .w3-dropdown-hover:last-of-type > .w3-dropdown-content .w3-dropdown-hover:hover .w3-dropdown-content {left: unset; right: 100%;}
+	/* If a first or second level submenu is indicated to pull-left, position it and it's children to the left */
+	nav.w3m > .w3-bar > .w3-dropdown-hover.w3m-pull-left:hover > .w3-dropdown-content {position: absolute; left: unset; right: 0;}
+	nav.w3m > .w3-bar .w3-dropdown-hover.w3m-pull-left .w3-dropdown-hover:hover .w3-dropdown-content,
+	nav.w3m > .w3-bar .w3-dropdown-hover .w3-dropdown-hover.w3m-pull-left:hover .w3-dropdown-content {left: unset; right: 100%;}
+
+
+	/**
+	 *  Hide clickable carets and style normal carets when submenus are opened or closed
+	**/
+
+	/* Turn on the non-clickable carets and turn off the clickable carets */
+	nav.w3m > .w3-bar .w3-dropdown-hover .w3m-caret-container {display: block;}
+	nav.w3m > .w3-bar .w3-dropdown-hover .w3m-caret-container button.w3m-clickable-caret {display: none;}
+	nav.w3m > .w3-bar .w3-dropdown-hover .w3m-caret-container .w3-button > i.caret {display: block;}
+
+	/* Right align non-clickable carets within buttons */
+	nav.w3m > .w3-bar .w3-button > i.w3m-caret {border: none; display: block; float: right; margin-left: 8px; padding: 4px 8px; vertical-align: middle; overflow: hidden; text-decoration: none; text-align: center; cursor: initial;}
+
+	/* Add appropriate caret characters for each level */
+	/* Default is angle down character */
+	nav.w3m > .w3-bar a.w3-button i.w3m-caret::before {font-family: FontAwesome; font: normal normal normal 14px/1 FontAwesome; font-size:inherit; text-rendering:auto; vertical-align: middle; content: "\f107";}
+	/* All below top level are angle right characters */
+	nav.w3m > .w3-bar .w3-dropdown-content a.w3-button i.w3m-caret::before {content: '\f105';}
+}
+
+
+/* Collapse to LHS slide-out sidebar and clickable accordian submenus on medium or small screens */
+@media screen and (max-width: 991px) {
+
+	/**
+	 *  Style resets to remove horizontal styles that are not needed now
+	**/	
+
+	/* We don't need andy menu items to be floating any more */
+	nav.w3m, 
+	nav.w3m > .w3-bar .w3-bar-item {float: none !important;}
+
+	/* Remove any additional padding from the original top-menu bar ***FIX THIS ELSEWHERE*** */
+	nav.w3m > div.w3-bar {padding: 0 !important;}
+
+	/* Using a button for clickable carets to help screen-readers, but don't need the normal button padding or border */
+	nav.w3m > .w3-bar div.w3m-caret-container button.w3m-clickable-caret {padding: 0 0; width: 100%; text-align: center; border: 0px;}
+			
+	/* Top level menu buttons now full width aligned left */
+	nav.w3m > .w3-bar > .w3-dropdown-hover {width: 100%;}
+	nav.w3m > .w3-bar .w3-button,
+	nav.w3m > .w3-bar span {text-align: left;}
+	
+	/* Submenus now no longer have shadow but have lines down LHS */
+	nav.w3m > .w3-bar .w3-dropdown-content {box-shadow: none; border-left: 2px solid grey; margin-left: 1rem;}
+	
+	/* Turn off the non-clickable carets and turn on the clickable carets */
+	nav.w3m > .w3-bar .w3-dropdown-hover .w3m-caret-container {display: grid; grid-template-columns: auto 40px;}
+	nav.w3m > .w3-bar .w3-dropdown-hover .w3m-caret-container .w3-button > i.w3m-caret {display: none;}
+	nav.w3m > .w3-bar .w3-dropdown-hover .w3m-caret-container button.w3m-clickable-caret {display: block;}
+
+
+	/**
+	 *  Make the menu into a side bar menu with open and close control buttons
+	**/
+
+	/* Reveal the open and close side control menu buttons */
+	header.w3-bar .w3m-control,
+	nav.w3m .w3m-control {display: block;}
+
+	/* Make the top menu bar into a left fixed menu sidebar */
+	nav.w3m > .w3-bar {display: block; padding: 0; margin: 0; height: 100%; width: 240px; position: fixed; top: 0; left: 0; z-index:10; overflow: auto;}
+	
+	/* Give the new sidebar a distinguishing background colour - restyle this for your own theme */
+	nav.w3m > .w3-bar {background-color: #fafafa;}
+	nav.w3m .w3-dropdown-content {background-color: transparent;} /* Ensure dropdowns are the same colour too */
+
+	/* Hide the sidebar initially */
+	nav.w3m > .w3-bar {left: -100%; overflow: hidden;}
+	
+	/* Class to display the sidebar */
+	nav.w3m > .w3-bar.w3m-sidebar-reveal {left: 0; overflow: auto;}
+	nav.w3m > .w3-bar {transition: left 0.5s;}
+
+
+	/**
+	 *  Reveal submenus inline as clickable carets are clicked
+	**/
+
+	/* Turn off submenu reveal on hover - Use the clickable caret instead */
+	nav.w3m .w3-dropdown-hover .w3-dropdown-content,
+	nav.w3m .w3-dropdown-hover:hover .w3-dropdown-content {display: block; position: fixed; left: -9999px; overflow: hidden;} /* Use 'position' to move off-screen rather than 'display:none' so screen readers can still see it */
+
+	/* Class to reveal a submenu when the caret is clicked */
+	nav.w3m > .w3-bar .w3-dropdown-hover .w3-dropdown-content.w3m-submenu-show {position: relative; left: unset;} /* Use 'position' to move on-screen rather than 'display:block' so screen readers can always see it */
+
+
+	/**
+	 *  Clickable caret styling for when submenus are opened or closed
+	**/
+
+	/* Add appropriate caret characters for each level */
+	/* Default is angle down character */
+	nav.w3m > .w3-bar div.w3m-caret-container button.w3m-clickable-caret::before {font-family: FontAwesome; font: normal normal normal 14px/1 FontAwesome; font-size:inherit; text-rendering:auto; vertical-align: middle; content: "\f107";}
+	/* When toggled, change to angle up character */
+	nav.w3m > .w3-bar div.w3m-caret-container button.w3m-caret-toggle::before {content: "\f106";}
+}

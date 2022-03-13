@@ -1,0 +1,356 @@
+/*!
+Theme Name: W3 Theme
+Theme URI: 
+Author: Alwyn Barry
+Author URI: 
+Description: Block Editor theme for w3.css Base Theme
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: wt
+Tags: child-theme
+
+This theme, like WordPress, is licensed under the GPL.
+
+w3_theme is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+*/
+
+
+/**
+ * 1. Colour and Font Styles
+ * ----------------------------------------------------------------------- */
+
+/* 1.1	Colour and size variables
+ * 		To modify the look of the theme, just override these variables
+ * ----------------------------------------------------------------------- */
+:root {
+	--wt-primary-color: #3a76ca;
+	--wt-primary-lighter-color: #89ade0;	/* was#76a0da;  Now w3-theme-l2 */
+	--wt-primary-darker-color: #2c5ea4;	/* was #275391; Now w3-theme-d2 */
+	--wt-complementary-1-color: #76ca3a;
+	--wt-complementary-1-lighter-color: #ade089;	/* was #a0da76;  Now w3-theme-l2 for #76ca3a */
+	--wt-complementary-1-darker-color: #5ea42c;	/* was #539127;  Now w3-theme-d2 for #76ca3a  */
+	--wt-complementary-2-color: #ca3a76;
+	--wt-complementary-2-lighter-color: #e089ad;	/* was #da76a0;  Now w3-theme-l2 for #ca3a76 */
+	--wt-complementary-2-darker-color: #a42c5e;	/* was #912753;  Now w3-theme-d2 for #ca3a76 */
+	--wt-light-grey-color: #eeeeee;
+	--wt-dark-grey-color: #333333;
+	--wt-text-color: #333333;
+	--wt-text-mid-color: #acaeaf;
+	--wt-text-lighter-color: #ffffff;
+	--wt-link-color: #3a76ca;
+	--wt-link-hover-color: #6fc6e0;
+	--wt-top-menu-text-color: #ffffff;
+	--wt-button-text-color: #ffffff;
+	--wt-boxes-text-color: #ffffff;
+	--wt-boxes-background-color: #3a76ca;
+	--wt-header-text-color: #ffffff;
+	--wt-header-background-color: #3a76ca;
+	--wt-breadcrumb-text-color: #ffffff;
+	--wt-breadcrumb-link-color: #99ccff;
+	--wt-breadcrumb-hover-color: #99ffff;
+	--wt-footer-text-color: #acaeaf;
+	--wt-footer-background-color: #313539;
+
+	--wt-content-width: 768px;
+	--wt-wide-width: 990px;
+
+	--wt-huge-size: 3rem;
+	--wt-larger-size: 2.5rem;
+	--wt-large-size: 2rem;
+	--wt-h1-size: 3rem;
+	--wt-h2-size: 2rem;
+	--wt-medium-size: 1.5rem;
+	--wt-h3-size: 1.5rem;
+	--wt-default-size: 1rem;
+	--wt-h4-size: 1rem;
+	--wt-h5-size: 0.9rem;
+	--wt-small-size: 0.8rem;
+	--wt-h6-size: 0.8rem;
+}
+
+
+/* Set global width for all Gutenberg blocks - this should be the same as your article width */
+.wp-block {
+	max-width: var(--wt-content-width);
+}
+
+
+/* 1.1	Font for headers and text
+ * ----------------------------------------------------------------------- */
+ 
+.editor-block-list__layout .editor-block-list__block,
+.editor-post-title__block .editor-post-title__input,
+h1.rich-text.block-editor-rich-text__editable,
+h2.rich-text.block-editor-rich-text__editable,
+h3.rich-text.block-editor-rich-text__editable,
+h4.rich-text.block-editor-rich-text__editable,
+h5.rich-text.block-editor-rich-text__editable,
+h6.rich-text.block-editor-rich-text__editable,
+.has-medium-font-size,
+#post-title-0,
+table {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+/* Body text font and appearance */
+.editor-block-list__layout .editor-block-list__block p,
+.rich-text.block-editor-rich-text__editable.wp-block-paragraph,
+.block-editor-block-list__layout.is-root-container,
+ul,
+ol {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--wt-text-color);
+}
+
+/* Monospace font for code */
+pre, code, kbd, tt, var {
+	font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+
+
+/*
+ * 1.2	Heading Font size classes for full screen and mobile
+ * -------------------------------------------------------------- */
+.editor-styles-wrapper h1 {font-size: var(--wt-h1-size); font-weight: 600;}
+.editor-styles-wrapper h2 {font-size: var(--wt-h2-size); font-weight: 600;}
+.editor-styles-wrapper h3 {font-size: var(--wt-h3-size);}
+.editor-styles-wrapper h4 {font-size: var(--wt-h4-size); font-weight: bold;}
+.editor-styles-wrapper h5 {font-size: var(--wt-h5-size); font-weight: bold;}
+.editor-styles-wrapper h6 {font-size: var(--wt-h6-size); font-weight: bold;}
+
+.editor-styles-wrapper small {font-size: var(--wt-small-size);}
+.editor-styles-wrapper big {font-size: var(--wt-large-size);}
+
+
+/*
+ * 1.3	Default text colours
+ * ----------------------------------------------------------------------- */
+.editor-styles-wrapper h1.rich-text.block-editor-rich-text__editable {color: var(--wt-primary-color);}
+
+.editor-styles-wrapper h2.rich-text.block-editor-rich-text__editable,
+.editor-styles-wrapper h3.rich-text.block-editor-rich-text__editable,
+.editor-styles-wrapper h4.rich-text.block-editor-rich-text__editable,
+.editor-styles-wrapper h5.rich-text.block-editor-rich-text__editable,
+.editor-styles-wrapper h6.rich-text.block-editor-rich-text__editable {color: var(--wt-primary-darker-color);}
+
+.editor-styles-wrapper p, .editor-styles-wrapper cite,
+.editor-styles-wrapper dl dd, .editor-styles-wrapper dl dt,
+.editor-styles-wrapper li, .editor-styles-wrapper pre {font-size: 1rem; color: var(--wt-text-color);}
+
+
+/*
+ * 1.4  Link colours and animations
+ * ----------------------------------------------------------------------- */
+.editor-styles-wrapper a {color: var(--wt-link-color);}
+.editor-styles-wrapper a {text-decoration: none; transition: all 200ms ease-in-out;}
+
+.editor-styles-wrapper a:hover, .editor-styles-wrapper a:focus, .editor-styles-wrapper a:active {color: var(--wt-link-hover-color);}
+
+
+/*
+ * 1.5	Typography
+ * ----------------------------------------------------------------------- */
+
+/* 1.5.1	Blockquotes */
+
+.editor-styles-wrapper blockquote, .editor-styles-wrapper blockquote.wp-block-quote {
+	background-color: var(--wt-light-grey-color);
+	border-left: 6px solid var(--wt-primary-color);
+	padding: 32px 32px;
+	overflow: hidden;
+}
+
+.editor-styles-wrapper blockquote p:first-of-type {
+	margin-top: 0; /* Remove top margin for first paragraph */
+}
+
+/* 1.5.2	Tables */
+
+.editor-styles-wrapper table th, .editor-styles-wrapper table td {
+	border: 1px solid var(--wt-text-color);
+	word-break: normal;
+	padding: 0.5rem;
+}
+
+/* 1.5.3	Definition Lists */
+.editor-styles-wrapper dt {
+	font-weight: 700;
+}
+
+.editor-styles-wrapper dd {
+	margin: 0 1.5em 1.5em;
+}
+
+/* 1.5.4	HTML Tags */
+
+.editor-styles-wrapper b,
+.editor-styles-wrapper strong {
+  font-weight: 700; }
+
+.editor-styles-wrapper cite,
+.editor-styles-wrapper em,
+.editor-styles-wrapper i {
+	font-style: italic;
+}
+
+.editor-styles-wrapper address {
+	margin: 0 0 1.5rem;
+}
+
+.editor-styles-wrapper pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", courier, monospace;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+.editor-styles-wrapper code,
+.editor-styles-wrapper kbd,
+.editor-styles-wrapper tt,
+.editor-styles-wrapper var {
+	font-family: consolas, monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
+	hyphens: none;
+}
+
+.editor-styles-wrapper abbr,
+.editor-styles-wrapper acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+.editor-styles-wrapper mark,
+.editor-styles-wrapper ins {
+	background: var(--wt-light-grey-color);
+	text-decoration: none;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+.editor-styles-wrapper hr {
+	background-color: var(--wt-grey-color);
+	border: 0;
+	height: 1px;
+}
+
+.editor-styles-wrapper quote, .editor-styles-wrapper q {
+  quotes: "\201C" "\201D";
+}
+
+
+/**
+ *  2.	Buttons
+ * ----------------------------------------------------------------------- */
+/* Buttons */
+.rich-text.block-editor-rich-text__editable button,
+.rich-text.block-editor-rich-text__editable [type="button"], .rich-text.block-editor-rich-text__editable [type="reset"], .rich-text.block-editor-rich-text__editable [type="submit"],
+.rich-text.block-editor-rich-text__editable.wp-block-button__link,
+.rich-text.block-editor-rich-text__editable.wp-block-button__link:visited {
+  background-color: var(--wt-primary-color);
+  color: white;
+  border-radius: 5px;
+}
+
+.rich-text.block-editor-rich-text__editable button:hover, .rich-text.block-editor-rich-text__editable button:active,
+.rich-text.block-editor-rich-text__editable [type="button"]:hover, .rich-text.block-editor-rich-text__editable [type="reset"]:hover, .rich-text.block-editor-rich-text__editable [type="submit"]:hover,
+.rich-text.block-editor-rich-text__editable [type="button"]:focus, .rich-text.block-editor-rich-text__editable [type="reset"]:focus, .rich-text.block-editor-rich-text__editable [type="submit"]:focus,
+.rich-text.block-editor-rich-text__editable [type="button"]:active, .rich-text.block-editor-rich-text__editable [type="reset"]:active, .rich-text.block-editor-rich-text__editable [type="submit"]:active,
+.rich-text.block-editor-rich-text__editable.wp-block-button__link:hover {
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+  background-color: var(--wt-primary-darker-color);
+  transition: all 200ms ease-in-out;
+}}
+
+/* Button colours */
+a.wt-primary-button, button.wt-primary-button {background-color: var(--wt-primary-color); color: var(--wt-top-menu-color);}
+a.wt-primary-button:hover, button.wt-primary-button:hover {background-color: var(--wt-primary-darker-color); color: var(--wt-button-text-color) !important;}
+a.wt-primary-button-darker, button.wt-primary-button-darker {background-color: var(--wt-primary-darker-color); color: var(--wt-button-text-color);}
+a.wt-primary-button-darker:hover, button.wt-primary-button-darker:hover {background-color: var(--wt-primary-lighter-color); color: var(--wt-button-text-color) !important;}
+a.wt-complementary-1-button, button.wt-complementary-1-button {background-color: var(--wt-complementary-1-color); color: var(--wt-button-text-color);}
+a.wt-complementary-1-button:hover, button.wt-complementary-1-button:hover {background-color: var(--wt-complementary-1-darker-color) !important; color: var(--wt-button-text-color) !important;}
+a.wt-complementary-2-button, button.wt-complementary-2-button {background-color: var(--wt-complementary-2-color); color: var(--wt-button-text-color);}
+a.wt-complementary-2-button:hover, button.wt-complementary-2-button:hover {background-color: var(--wt-complementary-2-darker-color); color: var(--wt-button-text-color) !important;}
+
+
+/*
+ * 3. Misc helpful styles to add to blocks as css classes
+ * ----------------------------------------------------- */
+
+./* Useful styles to remove column or section spacing */
+.wt-margin-top-0 {
+	margin-top: 0;
+}
+
+.wt-margin-right-0 {
+	margin-right: 0;
+}
+
+.wt-margin-bottom-0 {
+	margin-bottom: 0;
+}
+
+.wt-margin-left-0 {
+	margin-left: 0;
+}
+
+.wt-margin-left-right-0 {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wt-margin-top-bottom-0 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.wt-margins-0 {
+	margin: 0 0 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;	
+}
+
+/* Adding shadow to title text when displaying over images */
+.wt-colophon-text {
+	color: #ffffff;
+}
+
+.wt-colophon-text,
+.wt-shadow-text {
+    text-shadow: 2px 2px 8px #000000;
+}
+
+/* Classes to create columns of text from single column paragraphs */
+.wt-two-column-text {
+    -webkit-columns: 2 300px;
+    -moz-columns: 2 300px;
+    columns: 2 300px;
+    column-gap: 3em;
+    column-rule: 2px solid #eeeeee;
+}
+
+.wt-three-column-text {
+    -webkit-columns: 3 300px;
+    -moz-columns: 3 300px;
+    columns: 3 300px;
+    column-gap: 3em;
+    column-rule: 2px solid #eeeeee;
+}
+
+.wt-four-column-text {
+    -webkit-columns: 4 225px;
+    -moz-columns: 2 225px;
+    columns: 3 225px;
+    column-gap: 3em;
+    column-rule: 2px solid #eeeeee;
+}
