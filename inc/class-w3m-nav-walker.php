@@ -1,13 +1,23 @@
 <?php
 
 /**
- * W3M_Nav_Walker
  * Wordpress Menu Walker subclass to render w3.css menus which work with w3m-navbar responsive header menu
- * Author: Alwyn Barry
- * Copyright: 2021
- * Licence: GPLv2 or later
- * Version: 1.0.0
+ *
+ * Name			W3M_Nav_Walker
+ * @author		Alwyn Barry
+ * @copyright	2021
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @version		1.0.0
+ * 
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
+ * General Public License as published by the Free Software Foundation; either version 2 of the License, 
+ * or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
+ 
+ 
 if ( !class_exists( 'W3M_Nav_Walker' ) ) {
 
 	class W3M_Nav_Walker extends Walker_Nav_Menu {

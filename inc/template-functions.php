@@ -1,6 +1,14 @@
 <?php
 /**
  * Functions which enhance the theme by hooking into WordPress
+ * 
+ * Name:		template-functions.php
+ * Original file from: Underscores theme by Automattic
+ * @author		Alwyn Barry
+ * @copyright	2021
+ * For use in	w3-theme
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @version		1.0.0
  *
  * @package w3_theme
  */

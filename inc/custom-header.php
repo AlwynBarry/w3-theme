@@ -1,6 +1,15 @@
 <?php
 /**
- * Sample implementation of the Custom Header feature
+ * Name: custom-header.php
+ * 
+ * Create the header from the customisations
+ * 
+ * Original file from: Underscores theme by Automattic
+ * @author		Alwyn Barry
+ * @copyright	2021
+ * For use in	w3-theme
+ * @license   	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @version		1.0.0
  *
  * You can add an optional custom header image to header.php like so ...
  *

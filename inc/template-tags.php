@@ -2,12 +2,20 @@
 /**
  * Custom template tags for this theme
  *
- * Eventually, some of the functionality here could be replaced by core features.
- *
+ * Name: template-tags.php
+ * 
+ * Original file from: Underscores theme by Automattic
+ * @author		Alwyn Barry
+ * @copyright	2021
+ * For use in	w3-theme
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @version		1.0.0
+ * 
  * @package w3_theme
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
-
 
 
 if ( ! function_exists( 'wt_posted_on' ) ) :
