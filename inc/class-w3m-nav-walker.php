@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * W3M_Nav_Walker
+ * Wordpress Menu Walker subclass to render w3.css menus which work with w3m-navbar responsive header menu
+ * Author: Alwyn Barry
+ * Copyright: 2021
+ * Licence: GPLv2 or later
+ * Version: 1.0.0
+ */
 if ( !class_exists( 'W3M_Nav_Walker' ) ) {
 
 	class W3M_Nav_Walker extends Walker_Nav_Menu {
