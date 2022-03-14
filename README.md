@@ -21,10 +21,11 @@ Version 0.1: 9/4/2021
 
 # Technologies
 Based on `_s` (Underscores) Theme by Automattic, heavily modified to replace base CSS with w3.css
-Uses w3.css (see https://www.w3schools.com/w3css/)
-Uses w3m-navbar (see https://github.com/AlwynBarry/w3m-navbar)
-Uses BreadcrumbTrail (see http://themehybrid.com/plugins/breadcrumb-trail)
-Uses GetWid Blocks Collection (see https://wordpress.org/plugins/getwid/)
+
+* Uses w3.css (see https://www.w3schools.com/w3css/)
+* Uses w3m-navbar (see https://github.com/AlwynBarry/w3m-navbar)
+* Uses BreadcrumbTrail (see http://themehybrid.com/plugins/breadcrumb-trail)
+* Uses GetWid Blocks Collection (see https://wordpress.org/plugins/getwid/)
 
 # Installation
 1. In your Wordpress Admin panel, go to Appearance > Themes and click the Add New button
