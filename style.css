@@ -1896,5 +1896,5 @@ span.phone a::before {
 
 /* Class to hide content on mobile devices */
 @media screen and (max-width: 767px) {
-	.wt-hide-mobile {display: none;}
+	.wt-hide-mobile {display: none !important;}
 }
