@@ -393,7 +393,7 @@ html {
 	--wt-wide-width: 990px;
 
 	/* Set the base font size for all subsequent REM to work from */
-	font-size: 16px;
+	font-size: 15px;
 	/* Now add the normal font sizes from the base font size */
 	--wt-huge-size: 3rem;
 	--wt-larger-size: 2.5rem;
@@ -1794,6 +1794,16 @@ html {
 .wp-block-getwid-post-slider h2,
 .wp-block-getwid-post-slider p {
 	color: #ffffff;
+}
+
+.wp-block-getwid-post-slider.has-arrows-inside .slick-next,
+.wp-block-getwid-post-carousel.has-arrows-inside .slick-next {
+	right: 0px;
+}
+
+.wp-block-getwid-post-slider.has-arrows-inside .slick-prev,
+.wp-block-getwid-post-carousel.has-arrows-inside .slick-prev {
+	left: 0px;
 }
 
 
