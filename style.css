@@ -336,7 +336,8 @@ html {
  * 11.	Default Widget Styles
  * 11.1		Calendar Widget
  * 11.2		Social Icons Menu Widget
- * 12.	Misc helpful styles to add to blocks as css classes
+ * 12.	GetWid style changes to slider and carousel buttons to reflect theme colors and sizes
+ * 13.	Misc helpful styles to add to blocks as css classes
  */
 
 
@@ -1735,8 +1736,69 @@ html {
 .widget_nav_menu .menu > li:not(.menu-item-has-children) a[href*="youtube.com"]:before { content: "\f16a"; }
 
 
+/**
+ * 12.	GetWid style changes to slider and carousel buttons to reflect theme colors and sizes
+ * ----------------------------------------------------------------------- */
+
+.wp-block-getwid-post-slider .slick-prev,
+.wp-block-getwid-post-slider .slick-next,
+.wp-block-getwid-post-carousel .slick-next,
+.wp-block-getwid-post-carousel .slick-prev {
+	width: 45px;
+	height: 45px;
+	background-color: var(--wt-primary-color) !important;
+	opacity: 100%;
+	overflow: hidden;
+	text-shadow: none !important;
+}
+
+.wp-block-getwid-post-slider .slick-prev:hover,
+.wp-block-getwid-post-slider .slick-next:hover,
+.wp-block-getwid-post-carousel .slick-next:hover,
+.wp-block-getwid-post-carousel .slick-prev:hover {
+	background-color: var(--wt-primary-color-darker) !important;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+	transition: all 200ms ease-in-out;
+}
+
+.wp-block-getwid-post-slider .slick-prev::before,
+.wp-block-getwid-post-slider .slick-next::before,
+.wp-block-getwid-post-carousel .slick-prev::before,
+.wp-block-getwid-post-carousel .slick-next::before {
+  font-family: 'Font Awesome\ 5 Free'; 
+  font-weight: 900;
+	font-size: 45px;
+	padding: 0px 12px;
+	color: #ffffff;
+	opacity: 100%;
+}
+
+.wp-block-getwid-post-slider .slick-next::before,
+.wp-block-getwid-post-carousel .slick-next::before {
+	content: '\f105';
+}
+
+.wp-block-getwid-post-slider .slick-prev::before,
+.wp-block-getwid-post-carousel .slick-prev::before {
+	content: '\f104';
+}
+
+.wp-block-getwid-post-slider .slick-prev::before,
+.wp-block-getwid-post-slider .slick-next::before,
+.wp-block-getwid-post-carousel .slick-prev::before,
+.wp-block-getwid-post-carousel .slick-next::before {
+	color: #ffffff;
+}
+
+.wp-block-getwid-post-slider h1,
+.wp-block-getwid-post-slider h2,
+.wp-block-getwid-post-slider p {
+	color: #ffffff;
+}
+
+
 /*
- * 12. Misc helpful styles to add to blocks as css classes
+ * 13. Misc helpful styles to add to blocks as css classes
  * ----------------------------------------------------------------------- */
 
 /* Useful styles to remove column or section spacing */
