@@ -53,6 +53,7 @@ There are five widget areas:
 * TopBar Left, TopBar Right - above the header bar, these two areas are for one-line content like phone numbers, email, search or login
 * Sidebar - available in the default Post Template, a right hand sidebar that collapses below the main content on mobile
 * Footer top, Footer bottom - below all content, implemented to distribute the widgets / blocks intelligently across each footer
+
 Using Wordpress **Appearance** > **Widgets** you can add blocks or legacy widgets to each area.
 
 ## Menu
@@ -60,6 +61,7 @@ The top menu is the `primary` menu area.
 * In **Appearance** > **Menus** assign the main menu to `primary`.
 * The menu can be up to three-level (top menu bar, dropdown and dropdown submenu).
 * The menu is aligned right in the header bar.
+* The first menu item should be a Custom Link with label `Close`, URL target `#` and class `w3m-close-button`. This causss the close menu button to show in the menu when the menu is shown on a mobile screen and is required if the menu is to be dismissed without selecting a menu location to go to.
 
 ## Colors and Typography
 The default colors can be overridden in the child `styles.css` file, which can be edited from **Appearance** > **Theme file editor**.
@@ -84,8 +86,7 @@ Because the theme is designed to work with Gutenberg Blocks, there are only a fe
 * **Full Width** - cotent laid out using the full width with a 16px border. Useful for embedding content, calendar layouts, large tables, etc.
 
 **Post Templates**
-* **Default** - content has a right-side sidebar if sidebar widgets have been added
-* **Full Width** - content has no sidebar and is centred in a column 768px wide.  Blocks can also be full-width or wide-width
+* **Default** - content has a right-side sidebar if sidebar widgets have been added, of full-width if not.
 
 Templates are provided for Front Page, Single Blog Posts, Categories, Archives, and Search results.  These will be auto selected as needed.
 
