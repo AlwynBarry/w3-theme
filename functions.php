@@ -474,7 +474,7 @@ endif;
 function wt_login_form() { ?>
     <style type="text/css">
       body.login {
-        background-image: url(<?php get_template_directory_uri() . 'login-background.jpg'?>);
+        background-image: url(<?php echo(get_template_directory_uri() . '/login-background.jpg'); ?>);
         background-repeat: no-repeat;
         background-size: auto;
         height: auto;
@@ -485,10 +485,10 @@ function wt_login_form() { ?>
         padding: 15px;
       }
       #login h1 a, .login h1 a {
-        background-image: url(<?php get_custom_logo();?>);
-        height: auto;
-        width: 320px;
-        background-size: 320px auto;
+        background-image: url(<?php echo(get_custom_logo()); ?>);
+        height: 120px;
+        width: auto;
+        background-size: 120px auto;
         background-repeat: no-repeat;
         padding-bottom: 30px;
       }
