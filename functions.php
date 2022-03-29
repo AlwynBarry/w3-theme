@@ -468,3 +468,30 @@ add_action( 'wp_footer', 'scroll_to_top' );
 endif;
 
 
+/*
+ * Provide customised login form.  Change the image login-bakground.jpg to change the look
+ */
+function wt_login_form() { ?>
+    <style type="text/css">
+      body.login {
+        background-image: url(<?php get_template_directory_uri() . 'login-background.jpg'?>);
+        background-repeat: no-repeat;
+        background-size: auto;
+        height: auto;
+      }
+      div#login {
+        background-color: #fff;
+        margin-top: 5%;
+        padding: 15px;
+      }
+      #login h1 a, .login h1 a {
+        background-image: url(<?php get_custom_logo();?>);
+        height: auto;
+        width: 320px;
+        background-size: 320px auto;
+        background-repeat: no-repeat;
+        padding-bottom: 30px;
+      }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'wt_login_form' );
