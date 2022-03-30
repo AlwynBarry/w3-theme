@@ -1157,6 +1157,14 @@ nav.breadcrumbs a:hover {color: var(--wt-breadcrumb-hover-color);}
 	width: 300px;
 }
 
+@media (max-width: 992px) { /* 992px is the w3.css break point for l3 mobile size used for the side bar */
+   /* When sidebar collapses on mobile, but widgets side by side */
+  .wt-sidebar-surround .widget-area {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 .wt-sidebar-widget p,
 .wt-sidebar-widget span,
 .wt-sidebar-widget a,
