@@ -1,6 +1,7 @@
 <?php
 /**
  * Template Name: Sidebar Page
+ * Template Post Type: page
  *
  * The template for displaying pages which have a side bar too
  *

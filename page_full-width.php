@@ -1,6 +1,7 @@
 <?php
 /**
  * Template Name: Full Width Page
+ * Template Post Type: page
  *
  * The template for displaying pages full width
  *
