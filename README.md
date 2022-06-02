@@ -83,10 +83,12 @@ Because the theme is designed to work with Gutenberg Blocks, there are only a fe
 
 **Page Templates**
 * **Default** - content laid out in a centre column 768px wide.  Blocks can also be full-width or wide-width.
-* **Full Width** - cotent laid out using the full width with a 16px border. Useful for embedding content, calendar layouts, large tables, etc.
+* **Full Width** - content laid out using the full width with a 16px border. Useful for embedding content, calendar layouts, large tables, etc.
 
 **Post Templates**
-* **Default** - content has a right-side sidebar if sidebar widgets have been added, of full-width if not.
+* **Default** - content has a right-side sidebar if sidebar widgets have been added, or full-width with content in centre 768px column if not.
+* **Full Width** - content laid out with no right-side sidebar, in 768px centre column. Blocks can be full-width or wide-width.  {ost navigation, featured image and meta data is included as usual.
+* **Full Width, no image, no metadata** - content laid out like a Default page.  No post navigations, meta-data or Featured Image
 
 Templates are provided for Front Page, Single Blog Posts, Categories, Archives, and Search results.  These will be auto selected as needed.
 
