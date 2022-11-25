@@ -1914,7 +1914,7 @@ span.phone a::before {
 
 /* Utility style to hide content when printing */
 @media print {
-	.wt-no-print {visibility: hidden;}
+	.wt-no-print {visibility: hidden !important; display: hidden !important;}
 }
 
 /* Utility style to create responsive tables */
