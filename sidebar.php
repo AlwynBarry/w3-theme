@@ -25,6 +25,6 @@ if ( ! is_active_sidebar( 'wt-site-sidebar' ) ) {
 } // end if
 ?>
 
-<aside id="secondary" class="widget-area">
+<aside id="secondary" class="widget-area wt-no-print">
 	<?php dynamic_sidebar( 'wt-site-sidebar' ); ?>
 </aside><!-- #secondary -->
