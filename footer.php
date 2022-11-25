@@ -25,7 +25,7 @@
 
 
 	<?php if ( is_active_sidebar( 'wt-site-footer' ) || is_active_sidebar( 'wt-site-bottom-bar' ) ) { ?>
-	<footer id="wt-colophon" class="site-footer">
+	<footer id="wt-colophon" class="site-footer wt-no-print">
 		<?php if ( is_active_sidebar( 'wt-site-footer' ) ) { ?>
 		<div class="wt-top-footer w3-container">
 			<div class="w3-cell-row">
