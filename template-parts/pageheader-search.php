@@ -20,7 +20,7 @@
  */
 ?>
 
-<header class="w3-container page-header">
+<header class="w3-container page-header wt-no-print">
 	<div class="page-header-inner">
 		<h1 class="page-title">
 		<?php
