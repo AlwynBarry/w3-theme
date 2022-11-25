@@ -45,7 +45,7 @@
 
 	
 	<?php if ( is_active_sidebar( 'wt-site-topbar-left' ) || is_active_sidebar( 'wt-site-topbar-right' ) ) { ?>
-	<header id="wt-top-bar" class="w3-bar wt-site-top-bar">
+	<header id="wt-top-bar" class="w3-bar wt-site-top-bar wt-no-print">
 		<?php if ( is_active_sidebar( 'wt-site-topbar-left' ) ) { ?>
 		<div class="w3-bar-item w3-mobile">
 			<div class="w3-bar wt-top-bar-left">
@@ -66,7 +66,7 @@
 
 	<header id="masthead" class="w3-container w3-bar site-header">
 
-		<button class="w3-bar-item w3-button w3-hide-large w3-padding-large w3-hover-white w3-large w3-red w3m-control w3m-open-button" onclick="w3m_openSideMenu()" aria-controls="primary-menu" aria-expanded="false">☰</button>
+		<button class="w3-bar-item w3-button w3-hide-large w3-padding-large w3-hover-white w3-large w3-red w3m-control w3m-open-button wt-no-print" onclick="w3m_openSideMenu()" aria-controls="primary-menu" aria-expanded="false">☰</button>
 
 		<div class="w3-bar-item site-branding">
 			<?php
@@ -85,7 +85,7 @@
 			<?php } // end if ?>
 		</div><!-- .site-branding -->
 
-		<nav class="w3m w3-right w3-bar-item">
+		<nav class="w3m w3-right w3-bar-item wt-no-print">
 			<?php
 			wp_nav_menu(
 				array(
