@@ -1902,7 +1902,50 @@ span.phone a::before {
     column-rule: 2px solid #eeeeee;
 }
 
-/* Class to hide content on mobile devices */
+/* Utility style to enforce flex where needed */
+.wt-flex {
+    display: flex !important;
+}
+
+/* Utility style to hide content on mobile devices */
 @media screen and (max-width: 767px) {
 	.wt-hide-mobile {display: none !important;}
+}
+
+/* Utility style to hide content when printing */
+@media print {
+	.wt-no-print {visibility: hidden;}
+}
+
+/* Utility style to create responsive tables */
+@media screen and (max-width: 767px) {  
+  .wt-responsive-table thead {
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+  }
+  
+  .wt-responsive-table tr {
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  .wt-responsive-table td {
+    border: 1px solid;
+    border-bottom: none;
+    display: block;
+    font-size: .8em;
+    text-align: left;
+  }
+  
+  .wt-responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .wt-responsive-table td:last-child {
+    border-bottom: 1px solid;
+  }
 }
