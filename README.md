@@ -14,7 +14,7 @@ GPLv2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
 Version 0.1: 9/4/2021
 
 ## Version
-1.0
+1.0.1
 
 ## Date Published
 2022-03-12
@@ -135,3 +135,8 @@ W3Theme includes support for Gutenberg Blocks, WooCommerce and for Infinite Scro
 * There is built-in support for responsive mobile-ready main menu, responsive header, footers and content.
 * There is also built in support for 'scroll to top', shrinking and sicky headers.
 * There is built in support for Yoast Breadcrumbs or native breadcrumbs, depending on what plugins are active.  There is Breadcrumb support for BBPress.
+
+# Changes
+
+*2022/22/25*
+Update to 1.0.1 to reflect the progressive additions of: Utility styles, Printing control, Bug fixes
