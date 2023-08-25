@@ -14,10 +14,10 @@ GPLv2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
 Version 0.1: 9/4/2021
 
 ## Version
-1.0.1
+1.0.2
 
 ## Date Published
-2022-03-12
+2022-08-25
 
 # Technologies
 Based on `_s` (Underscores) Theme by Automattic, heavily modified to replace base CSS with w3.css
