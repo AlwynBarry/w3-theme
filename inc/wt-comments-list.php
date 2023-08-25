@@ -9,7 +9,7 @@
  * @copyright	2021
  * For use in	w3-theme
  * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version		1.0.0
+ * @version		1.0.2
  * 
  * @package w3_theme
  * 
