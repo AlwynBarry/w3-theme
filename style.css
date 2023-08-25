@@ -1764,7 +1764,7 @@ html {
 .wp-block-getwid-post-slider .slick-next:hover,
 .wp-block-getwid-post-carousel .slick-next:hover,
 .wp-block-getwid-post-carousel .slick-prev:hover {
-	background-color: var(--wt-primary-color-darker) !important;
+	background-color: var(--wt-primary-darker-color) !important;
 	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
 	transition: all 200ms ease-in-out;
 }
