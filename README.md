@@ -61,7 +61,7 @@ The top menu is the `primary` menu area.
 * In **Appearance** > **Menus** assign the main menu to `primary`.
 * The menu can be up to three-level (top menu bar, dropdown and dropdown submenu).
 * The menu is aligned right in the header bar.
-* The first menu item should be a Custom Link with label `Close`, URL target `#` and class `w3m-close-button`. This causss the close menu button to show in the menu when the menu is shown on a mobile screen and is required if the menu is to be dismissed without selecting a menu location to go to.
+* The first menu item should be a Custom Link with label `Close`, URL target `#` and class `w3m-close-button`. This causes the close menu button to show in the menu when the menu is shown on a mobile screen and is required if the menu is to be dismissed without selecting a menu location to go to.
 
 ## Colors and Typography
 The default colors can be overridden in the child `styles.css` file, which can be edited from **Appearance** > **Theme file editor**.
