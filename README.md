@@ -17,7 +17,7 @@ Version 0.1: 9/4/2021
 1.0.2
 
 ## Date Published
-2022-08-25
+2023-08-25
 
 # Technologies
 Based on `_s` (Underscores) Theme by Automattic, heavily modified to replace base CSS with w3.css
