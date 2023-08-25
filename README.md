@@ -138,5 +138,8 @@ W3Theme includes support for Gutenberg Blocks, WooCommerce and for Infinite Scro
 
 # Changes
 
+*2023/08/25*
+Very minor bugfixes to correct an incorrect colour setting and correct spelling in readme.md
+
 *2022/22/25*
 Update to 1.0.1 to reflect the progressive additions of: Utility styles, Printing control, Bug fixes
