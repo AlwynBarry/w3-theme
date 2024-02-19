@@ -589,6 +589,15 @@ ul {
 	list-style: disc outside;
 }
 
+.entry-content ul li li {
+	list-style: circle outside;
+	margin-left: 2em;
+}
+
+.entry-content ul li li li {
+	list-style: square outside;
+}
+
 
 /* 1.7.5	HTML Tags */
 
