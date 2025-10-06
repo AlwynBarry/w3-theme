@@ -363,15 +363,15 @@ html {
 	--wt-primary-lighter-color: #76a0da;
 	--wt-primary-lightest-color: #f3f7fc;
 	--wt-primary-darker-color: #275391;
-	--wt-complementary-1-color: #76ca3a;
-	--wt-complementary-1-lighter-color: #a0da76;
-	--wt-complementary-1-darker-color: #539127;
-	--wt-complementary-2-color: #ca3a76;
-	--wt-complementary-2-lighter-color: #da76a0;
-	--wt-complementary-2-darker-color: #912753;
-	--wt-light-grey-color: #eeeeee;
+	--wt-secondary-color: #76ca3a;
+	--wt-secondary-lighter-color: #a0da76;
+	--wt-secondary-darker-color: #539127;
+	--wt-tertiary-color: #ca3a76;
+	--wt-tertiary-lighter-color: #da76a0;
+	--wt-tertiary-darker-color: #912753;
+	--wt-grey-lighter-color: #eeeeee;
 	--wt-grey-color: #aaaaaa;
-	--wt-dark-grey-color: #333333;
+	--wt-grey-darker-color: #333333;
 	--wt-text-color: #333333;
 	--wt-text-mid-color: #acaeaf;
 	--wt-text-lighter-color: #ffffff;
@@ -395,17 +395,17 @@ html {
 	/* Set the base font size for all subsequent REM to work from */
 	font-size: 15px;
 	/* Now add the normal font sizes from the base font size */
-	--wt-huge-size: 3rem;
-	--wt-larger-size: 2.5rem;
-	--wt-large-size: 2rem;
+	--wt-huge: 3rem;
+	--wt-larger: 2.5rem;
+	--wt-large: 2rem;
 	--wt-h1-size: 3rem;
 	--wt-h2-size: 2rem;
-	--wt-medium-size: 1.5rem;
+	--wt-medium: 1.5rem;
 	--wt-h3-size: 1.5rem;
-	--wt-default-size: 1rem;
+	--wt-default: 1rem;
 	--wt-h4-size: 1rem;
 	--wt-h5-size: 0.9rem;
-	--wt-small-size: 0.8rem;
+	--wt-small: 0.8rem;
 	--wt-h6-size: 0.8rem;
 }
 
@@ -458,36 +458,37 @@ p.feature-credit a:hover, p.feature-credit a:active {color: var(--wt-link-hover-
 .has-wt-primary-lightest-background-color {background-color: var(--wt-primary-lightest-color);}
 .has-wt-primary-darker-color {color: var(--wt-primary-darker-color);}
 .has-wt-primary-darker-background-color {background-color: var(--wt-primary-darker-color);}
-.has-wt-complementary-1-color {color: var(--wt-complementary-1-color);}
-.has-wt-complementary-1-background-color {background-color: var(--wt-complementary-1-color);}
-.has-wt-complementary-1-lighter-color {color: var(--wt-complementary-1-lighter-color);}
-.has-wt-complementary-1-lighter-background-color {background-color: var(--wt-complementary-1-lighter-color);}
-.has-wt-complementary-1-darker-color {color: var(--wt-complementary-1-darker-color);}
-.has-wt-complementary-1-darker-background-color {background-color: var(--wt-complementary-1-darker-color);}
-.has-wt-complementary-2-color {color: var(--wt-complementary-2-color);}
-.has-wt-complementary-2-background-color {background-color: var(--wt-complementary-2-color);}
-.has-wt-complementary-2-lighter-color {color: var(--wt-complementary-2-lighter-color);}
-.has-wt-complementary-2-lighter-background-color {background-color: var(--wt-complementary-2-lighter-color);}
-.has-wt-complementary-2-darker-color {color: var(--wt-complementary-2-darker-color);}
-.has-wt-complementary-2-darker-background-color {background-color: var(--wt-complementary-2-darker-color);}
+.has-wt-secondary-color {color: var(--wt-secondary-color);}
+.has-wt-secondary-background-color {background-color: var(--wt-secondary-color);}
+.has-wt-secondary-lighter-color {color: var(--wt-secondary-lighter-color);}
+.has-wt-secondary-lighter-background-color {background-color: var(--wt-secondary-lighter-color);}
+.has-wt-secondary-darker-color {color: var(--wt-secondary-darker-color);}
+.has-wt-secondary-darker-background-color {background-color: var(--wt-secondary-darker-color);}
+.has-wt-tertiary-color {color: var(--wt-tertiary-color);}
+.has-wt-tertiary-background-color {background-color: var(--wt-tertiary-color);}
+.has-wt-tertiary-lighter-color {color: var(--wt-tertiary-lighter-color);}
+.has-wt-tertiary-lighter-background-color {background-color: var(--wt-tertiary-lighter-color);}
+.has-wt-tertiary-darker-color {color: var(--wt-tertiary-darker-color);}
+.has-wt-tertiary-darker-background-color {background-color: var(--wt-tertiary-darker-color);}
 .has-wt-grey-color {color: var(--wt-grey-color);}
 .has-wt-grey-background-color {background-color: var(--wt-grey-color);}
-.has-wt-light-grey-color {color: var(--wt-light-grey-color);}
-.has-wt-light-grey-background-color {background-color: var(--wt-light-grey-color);}
-.has-wt-dark-grey-color {color: var(--wt-dark-grey-color);}
-.has-wt-dark-grey-background-color {background-color: var(--wt-dark-grey-color);}
+.has-wt-grey-lighter-color {color: var(--wt-grey-lighter-color);}
+.has-wt-grey-lighter-background-color {background-color: var(--wt-grey-lighter-color);}
+.has-wt-grey-darker-color {color: var(--wt-grey-darker-color);}
+.has-wt-grey-darker-background-color {background-color: var(--wt-grey-darker-color);}
 .has-wt-white-color {color: #ffffff;}
 
 
 /* 1.5	Gutenberg Block font size classes
  * -------------------------------------------------------------- */
-.has-huge-font-size, #primary .has-huge-font-size {font-size: var(--wt-huge-size);}
-.has-larger-font-size, #primary .has-larger-font-size {font-size: var(--wt-larger-size);}
-.has-large-font-size, #primary .has-large-font-size {font-size: var(--wt-large-size); font-weight: 600;}
-.has-medium-font-size, #primary .has-medium-font-size {font-size: var(--wt-medium-size);}
+.has-huge-font-size, #primary .has-huge-font-size {font-size: var(--wt-huge);}
+.has-larger-font-size, #primary .has-larger-font-size {font-size: var(--wt-larger);}
+.has-large-font-size, #primary .has-large-font-size {font-size: var(--wt-large); font-weight: 700;}
+.has-medium-font-size, #primary .has-medium-font-size {font-size: var(--wt-medium);}
 .has-normal-font-size, #primary .has-normal-font-size,
-.has-regular-font-size, #primary .has-regular-font-size {font-size: var(--wt-default-size);}
-.has-small-font-size, #primary .has-small-font-size {font-size: var(--wt-small-size);}
+.has-default-font-size, #primary .has-default-font-size,
+.has-regular-font-size, #primary .has-regular-font-size {font-size: var(--wt-default);}
+.has-small-font-size, #primary .has-small-font-size {font-size: var(--wt-small);}
 
 
 /*
@@ -500,7 +501,7 @@ select,
 optgroup,
 textarea {
 	font-family: Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: var(--wt-default-size);
+	font-size: var(--wt-default);
 	line-height: 1.5;
 }
 
@@ -511,8 +512,8 @@ h4, #primary h4 {font-size: var(--wt-h4-size); font-weight: bold;}
 h5, #primary h5 {font-size: var(--wt-h5-size); font-weight: bold;}
 h6, #primary h6 {font-size: var(--wt-h6-size); font-weight: bold;}
 
-small {font-size: var(--wt-small-size);}
-big {font-size: var(--wt-large-size);}
+small {font-size: var(--wt-small);}
+big {font-size: var(--wt-large);}
 
 @media screen and (max-width: 767px) {
 	.has-huge-font-size, #primary .has-huge-font-size,
@@ -642,7 +643,7 @@ acronym {
 
 mark,
 ins {
-	background: var(--wt-light-grey-color);
+	background: var(--wt-grey-lighter-color);
 	text-decoration: none;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
@@ -934,10 +935,10 @@ a.wt-primary-button, button.wt-primary-button {background-color: var(--wt-primar
 a.wt-primary-button:hover, button.wt-primary-button:hover {background-color: var(--wt-primary-darker-color); color: var(--wt-button-text-color) !important;}
 a.wt-primary-button-darker, button.wt-primary-button-darker {background-color: var(--wt-primary-darker-color); color: var(--wt-button-text-color);}
 a.wt-primary-button-darker:hover, button.wt-primary-button-darker:hover {background-color: var(--wt-primary-lighter-color); color: var(--wt-button-text-color) !important;}
-a.wt-complementary-1-button, button.wt-complementary-1-button {background-color: var(--wt-complementary-1-color); color: var(--wt-button-text-color);}
-a.wt-complementary-1-button:hover, button.wt-complementary-1-button:hover {background-color: var(--wt-complementary-1-darker-color) !important; color: var(--wt-button-text-color) !important;}
-a.wt-complementary-2-button, button.wt-complementary-2-button {background-color: var(--wt-complementary-2-color); color: var(--wt-button-text-color);}
-a.wt-complementary-2-button:hover, button.wt-complementary-2-button:hover {background-color: var(--wt-complementary-2-darker-color); color: var(--wt-button-text-color) !important;}
+a.wt-secondary-button, button.wt-secondary-button {background-color: var(--wt-secondary-color); color: var(--wt-button-text-color);}
+a.wt-secondary-button:hover, button.wt-secondary-button:hover {background-color: var(--wt-secondary-darker-color) !important; color: var(--wt-button-text-color) !important;}
+a.wt-tertiary-button, button.wt-tertiary-button {background-color: var(--wt-tertiary-color); color: var(--wt-button-text-color);}
+a.wt-tertiary-button:hover, button.wt-tertiary-button:hover {background-color: var(--wt-tertiary-darker-color); color: var(--wt-button-text-color) !important;}
 
 
 /* 4.3 Forms elements styling
@@ -1157,7 +1158,7 @@ nav.breadcrumbs a:hover {color: var(--wt-breadcrumb-hover-color);}
  * --------------------------------------------------------- */
 .wt-sidebar-surround {
 	height: 100%;
-	border-left: 1px solid var(--wt-light-grey-color);
+	border-left: 1px solid var(--wt-grey-lighter-color);
 }
 
 .wt-sidebar-widget {
@@ -1185,7 +1186,7 @@ nav.breadcrumbs a:hover {color: var(--wt-breadcrumb-hover-color);}
 }
 
 .wt-sidebar-widget h2.wt-sidebar-widget-title {
-	font-size: var(--wt-medium-size);
+	font-size: var(--wt-medium);
 	text-transform: uppercase;
 }
 
@@ -1193,7 +1194,7 @@ nav.breadcrumbs a:hover {color: var(--wt-breadcrumb-hover-color);}
 /* 5.8	Footer Styling
  * --------------------------------------------------------- */
 .site-footer .wt-top-footer {
-    background-color: var(--wt-light-grey-color);
+    background-color: var(--wt-grey-lighter-color);
 	padding: 1.5rem 1.5rem;
 }
 
@@ -1228,16 +1229,16 @@ nav.breadcrumbs a:hover {color: var(--wt-breadcrumb-hover-color);}
 
 /* Style the description block */
 .archive-description {
-	background-color: var(--wt-light-grey-color);
+	background-color: var(--wt-grey-lighter-color);
 	padding: 16px 16px;
-	border: solid 1px var(--wt-dark-grey-color);
+	border: solid 1px var(--wt-grey-darker-color);
 	border-radius: 5px;
 }
 
 /* Style the description text */
 .archive-description p:before {
 	font-family: "FontAwesome";
-	font-size: var(--wt-huge-size);
+	font-size: var(--wt-huge);
 	vertical-align: middle;
 	content: "\f05a";
 	padding-right: 1.5rem;
@@ -1264,7 +1265,7 @@ article .entry-header {
 
 .entry-meta,
 .entry-footer {
-	font-size: var(--wt-small-size);
+	font-size: var(--wt-small);
 }
 
 .entry-footer .tags-links {
@@ -1272,17 +1273,17 @@ article .entry-header {
 }
 
 .entry-footer .tags-links a {
-	background-color: white; /* var(--wt-complementary-1-color); */
-	color: var(--wt-complementary-1-darker-color); /* #fff; */
+	background-color: white; /* var(--wt-secondary-color); */
+	color: var(--wt-secondary-darker-color); /* #fff; */
 	display: inline-block;
 	padding: 2px 8px;
 	text-align: center;
-	border: 1px solid var(--wt-complementary-1-darker-color);
+	border: 1px solid var(--wt-secondary-darker-color);
 	border-radius: 3px;
 }
 
 .entry-footer .tags-links a:hover {
-	background-color: var(--wt-complementary-1-darker-color);
+	background-color: var(--wt-secondary-darker-color);
 	color: white;
 }
 
@@ -1292,7 +1293,7 @@ article .entry-header {
 
 .entry-footer span.edit-link a:after {
 	font-family: "FontAwesome";
-	font-size: var(--wt-medium-size);
+	font-size: var(--wt-medium);
 	vertical-align: middle;
 	content: "\f044";
 	padding-left: 0.3rem;
@@ -1327,12 +1328,12 @@ h4.comment-author {
 
 span.edit-comment {
 	margin-left: 2rem;
-	font-size: var(--wt-small-size);
+	font-size: var(--wt-small);
 }
 
 span.edit-comment a::after {
     font-family: "FontAwesome";
-    /*font-size: var(--wt-medium-size);*/
+    /*font-size: var(--wt-medium);*/
     vertical-align: middle;
     content: "\f044";
     padding-left: 0.3rem;
@@ -1340,7 +1341,7 @@ span.edit-comment a::after {
 
 .reply a,
 .reply a:visited {
-	font-size: var(--wt-small-size);
+	font-size: var(--wt-small);
 	font-weight: normal;
 }
 
@@ -1348,7 +1349,7 @@ span.edit-comment a::after {
 	content:"\f112";
 	font-family: "FontAwesome";
 	padding: 4px 4px 0 0px;
-	font-size: var(--wt-small-size);
+	font-size: var(--wt-small);
 }
 
 
@@ -1368,19 +1369,19 @@ span.edit-comment a::after {
 .comment-list > li .fn, 
 .comment-list > li .cfn {
 	text-transform: uppercase;
-	font-size: var(--wt-default-size);
+	font-size: var(--wt-default);
 	display: inline-block;
 	margin: 16px 0 0;
 }
 
 .commentpolicy {
 	margin: 32px 0 !important;
-	font-size: var(--wt-default-size);
+	font-size: var(--wt-default);
 }
 
 
 h3#reply-title {
-	font-size: var(--wt-medium-size);
+	font-size: var(--wt-medium);
 	text-transform: uppercase;
 	padding: 0px;
 	margin: 0px;
@@ -1388,7 +1389,7 @@ h3#reply-title {
 }
 
 #cancel-comment-reply-link {
-	font-size: var(--wt-small-size);
+	font-size: var(--wt-small);
 	margin-left: 2rem;
 }
 
@@ -1434,7 +1435,7 @@ h3#reply-title {
 
 .archive-navigation .nav-previous a,
 .archive-navigation .nav-next a {
-    background: var(--wt-light-grey-color);
+    background: var(--wt-grey-lighter-color);
     border-radius: 5px;
     color: var(--text-color);
     display: inline-block;
@@ -1459,7 +1460,7 @@ h3#reply-title {
 
 .site-main .comment-navigation,
 .site-main .post-navigation {
-	border-color: var(--wt-light-grey-color);
+	border-color: var(--wt-grey-lighter-color);
 	border-top-style: solid;
 	border-top-width: 1px;
 	padding-top: 1.5rem;
@@ -1518,7 +1519,7 @@ h3#reply-title {
 .post-navigation .nav-previous a:before,
 .post-navigation .nav-next a:after {
 	font-family: "FontAwesome";
-	font-size: var(--wt-small-size);
+	font-size: var(--wt-small);
 	position: relative;
 	top: -1px;
 }
@@ -1544,7 +1545,7 @@ h3#reply-title {
 }
 
 .pagination .page-numbers {
-    background: var(--wt-light-grey-color);
+    background: var(--wt-grey-lighter-color);
     border-radius: 5px;
     color: var(--wt-text-color);
     display: inline-block;
@@ -1598,7 +1599,7 @@ h3#reply-title {
 }
 
 .meta-nav {
-	font-size: var(--wt-small-size);
+	font-size: var(--wt-small);
  }
 
 .nav-previous .meta-nav {
@@ -1650,7 +1651,7 @@ html {
 #wp-calendar {
 	border: none;
 	margin: 0;
-	font-size: var(--wt-small-size);
+	font-size: var(--wt-small);
 }
 
 #wp-calendar caption {
@@ -1674,7 +1675,7 @@ html {
 }
 
 #wp-calendar tbody td {
-	background: var(--wt-light-grey-color);
+	background: var(--wt-grey-lighter-color);
 	border: 1px solid #fff;
 	text-align: center;
 }

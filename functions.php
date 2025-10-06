@@ -143,6 +143,16 @@ if ( ! function_exists( 'wt_setup' ) ) :
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
 			array(
+				'name'  => __( 'Base', 'wt' ),
+				'slug'  => 'wt-base',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => __( 'Contrast', 'wt' ),
+				'slug'  => 'wt-contrast',
+				'color' => '#333333',
+			),
+			array(
 				'name'  => __( 'Primary', 'wt' ),
 				'slug'  => 'wt-primary',
 				'color' => '#3a76ca',
@@ -155,7 +165,7 @@ if ( ! function_exists( 'wt_setup' ) ) :
 			array(
 				'name'  => __( 'Primary Lightest', 'wt' ),
 				'slug'  => 'wt-primary-lightest',
-				'color' => '#f3f9fc',
+				'color' => '#f3f7fc',
 			),
 			array(
 				'name'  => __( 'Primary Darker', 'wt' ),
@@ -163,43 +173,48 @@ if ( ! function_exists( 'wt_setup' ) ) :
 				'color' => '#2c5ea4',
 			),
 			array(
-				'name'  => __( 'Complementary 1', 'wt' ),
-				'slug'  => 'wt-complementary-1',
+				'name'  => __( 'Secondary', 'wt' ),
+				'slug'  => 'wt-secondary',
 				'color' => '#76ca3a',
 			),
 			array(
-				'name'  => __( 'Complementary 1 Lighter', 'wt' ),
-				'slug'  => 'wt-complementary-1-lighter',
+				'name'  => __( 'Secondary Lighter', 'wt' ),
+				'slug'  => 'wt-secondary-lighter',
 				'color' => '#ade089',
 			),
 			array(
-				'name'  => __( 'Complementary 1 Darker', 'wt' ),
-				'slug'  => 'wt-complementary-1-darker',
+				'name'  => __( 'Secondary Darker', 'wt' ),
+				'slug'  => 'wt-secondary-darker',
 				'color' => '#5ea42c',
 			),
 			array(
-				'name'  => __( 'Complementary 2', 'wt' ),
-				'slug'  => 'wt-complementary-2',
+				'name'  => __( 'Tertiary', 'wt' ),
+				'slug'  => 'wt-tertiary',
 				'color' => '#ca3a76',
 			),
 			array(
-				'name'  => __( 'Complementary 2 Lighter', 'wt' ),
-				'slug'  => 'wt-complementary-2-lighter',
+				'name'  => __( 'Tertiary Lighter', 'wt' ),
+				'slug'  => 'wt-tertiary-lighter',
 				'color' => '#e089ad',
 			),
 			array(
-				'name'  => __( 'Complementary 2 Darker', 'wt' ),
-				'slug'  => 'wt-complementary-2-darker',
+				'name'  => __( 'Tertiary Darker', 'wt' ),
+				'slug'  => 'wt-tertiary-darker',
 				'color' => '#a42c5e',
 			),
 			array(
+				'name'  => __( 'Grey', 'wt' ),
+				'slug'  => 'wt-grey',
+				'color' => '#acaeaf',
+			),
+			array(
 				'name'  => __( 'Light Grey', 'wt' ),
-				'slug'  => 'wt-light-grey',
+				'slug'  => 'wt-grey-lighter',
 				'color' => '#eee',
 			),
 			array(
 				'name'  => __( 'Dark Grey', 'wt' ),
-				'slug'  => 'wt-dark-grey',
+				'slug'  => 'wt-grey-darker',
 				'color' => '#333',
 			),
 			array(
