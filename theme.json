@@ -226,12 +226,12 @@
 			  ],
 			"text": true
 		},
+		"dimensions": {
+			"minHeight": true
+		},
 		"layout": {
 			"contentSize": "768px",
 			"wideSize": "990px"
-		},
-		"dimensions": {
-			"minHeight": true
 		},
 		"shadow": {
 			"defaultPresets": true,
